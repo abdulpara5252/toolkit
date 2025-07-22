@@ -1,0 +1,395 @@
+@import "../../common/vg-theme-token.css";
+@import "../../common/vg-typography-token.css";
+
+* {
+    font-family: "proxima-nova", sans-serif;
+    box-sizing: border-box;
+    // scrollbar-color: rgba(2, 2, 2, 0.5) #f6f4f3;
+    // scrollbar-width: thin;
+    // scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    background-color: var(--bkg_neutral_tiertiary);
+    border-radius: var(--radius_large);
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--bkg_components_selector_disabled);
+    border-radius: var(--radius_large);
+    position: relative;
+    z-index: 999;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: var(--radius_large);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    color: #333;
+    font-weight: 400;
+}
+
+h2.form-title {
+    text-align: left;
+    border-bottom: 1px solid var(--border_neutral_strong);
+    padding: 0 0 20px;
+    margin: 0 0 20px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    color: #a2a0a2;
+}
+
+.form-container {
+    padding: 20px 20px 0;
+    text-align: left;
+    background-color: var(--bkg_neutral_default);
+}
+
+.vgform {
+    max-width: 800px;
+    width: 100%;
+
+    .fields {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -8px;
+        margin-right: -8px;
+
+        .field {
+            padding-left: 8px;
+            padding-right: 8px;
+            width: 100%;
+            flex: 50% 0 0%;
+        }
+    }
+
+    .fields > .field,
+    .field {
+        margin-bottom: 16px;
+    }
+
+    .field {
+        .vg-textarea-group {
+            width: 100%;
+        }
+    }
+
+    .fields-action {
+        display: flex;
+        justify-content: flex-end;
+        border-top: 1px solid var(--border_neutral_strong);
+        padding: 16px 0;
+
+        @media (min-width:767px) {
+            button {
+                margin-left: 16px;
+            }
+        }
+    }
+
+    .addresstextfileWrap {
+        width: 100%;
+    }
+
+    .vg-date-container,
+    .vg-time-picker {
+        width: 100%;
+
+        .vg-input-control {
+            width: 100%;
+            min-width: 100%;
+        }        
+    }
+}
+
+.chekcbox-group {
+    margin: 10px 0 16px;
+    padding: 0;
+    list-style: none;
+    
+    li {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width:767px) {
+    .form-container {
+        padding: 0 0 150px;
+    }
+    .vgform {
+        //padding: 20px;
+        //overflow: auto;
+        //height: calc(100vh - 150px);
+        
+        .fields {
+            flex-direction: column;
+        }
+
+        .fields-action {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background-color: var(--bkg_neutral_secondary);
+            display: flex;
+            flex-wrap: wrap;
+            padding: var(--spacing_16) var(--spacing_20);
+            z-index: 5;
+
+            button {
+                margin-bottom: 16px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .d-none-mob {
+        display: none !important;
+    }
+}
+
+.App {
+    background-color: var(--bkg_neutral_secondary);
+    text-align: left;
+}
+/*Employee Profile Design*/
+.vg-reacttk{
+    text-align: left;
+    max-width: 1050px;
+    min-height: 100%;
+    padding: 24px;
+    background-color: var(--bkg_neutral_default);
+    padding-bottom: 72px;
+}
+.vg-reacttk .vg-section-title{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    color: var(--text_neutral_weak);
+}
+.vg-reacttk .emp-profile-form-wrap{
+    display: flex;
+}
+.vg-reacttk .emp-profile-form-wrap .emp-profile-form {
+    width: 100%;
+}
+.vg-reacttk .emp-profile-form .emp-company-info {
+    margin-top: 40px;
+}
+.vg-reacttk .emp-photo-upload {
+    margin-left: 16px;
+}
+.vg-reacttk .emp-photo-upload .vg-upload-flex{
+    max-width: 250px;
+}
+// .vg-upload-drop.horizontal{
+//     max-width: 250px;
+//     width: 250px;
+// }
+.vg-reacttk .emp-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.vg-reacttk .emp-col-6.fullwidth {
+    width: 100%;
+}
+.vg-reacttk .emp-col-6 {
+    width: calc(50% - 8px);
+}
+.vg-reacttk .emp-col-3{
+    width: calc(33.333% - 11px);
+}
+.emp-inner-col-custome
+{
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.emp-inner-col-custome .w100{
+    width: 100%;
+}
+.vg-input-label:empty{
+    display: none;
+}
+.emp-inner-col
+{
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.vg-reacttk .mb-3 {
+    margin-bottom: 1rem;
+}
+.vg-reacttk .field-label {
+    color: var(--text_neutral_default) ;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 4px;
+    display: block;
+}
+.vg-reacttk .emp-bio-info, .emp-sms-counter {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--text_neutral_weak);
+    margin-top: 4px;
+}
+
+.vg-reacttk .emp-profile-form .vg-toggle-switch{
+    border-bottom: 1px solid var(--border_neutral_default);
+    padding: 24px 0 22px;
+    width: 100%;
+}
+.vg-reacttk-footer.emp-profile-footer{
+    max-width: 1050px;
+    padding: 16px 20px;
+    border-right: 1px solid var(--border_neutral_default);
+    border-top: 1px solid var(--border_neutral_default);
+    background-color: var(--bkg_neutral_secondary);
+    bottom: 0;
+    gap: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: flex-end;
+
+    .vg-tk-btn:first-child {
+        margin-left: var(--spacing_0);
+    }
+    .vg-tk-btn {
+        margin-left: var(--spacing_16);
+    }
+
+}
+.vg-input-control.custom-select-control{
+    padding: var(--spacing_6) var(--spacing_8);
+    -webkit-appearance: auto;
+    background: none;
+}
+
+@media(max-width:767px){
+    .vg-reacttk{
+        padding-bottom: 85px;
+    }
+    .vg-reacttk .emp-col-6 {
+        width: 100%;
+    }
+    .vg-reacttk-footer.emp-profile-footer{
+        max-width: 100%;
+        flex-direction: column-reverse;
+        .vg-tk-btn:first-child {
+            margin-left: var(--spacing_0);
+            margin-top: var(--spacing_16);
+            display: none;
+        }
+        .vg-tk-btn {
+            margin-left: var(--spacing_0);
+            margin-top: var(--spacing_0);
+        }
+    }
+    .vg-reacttk .emp-col-3{
+        width:100%;
+    }
+    .vg-reacttk .emp-photo-upload .vg-upload-flex{
+        max-width: 163px;
+        height: 163px;
+    }
+    .vg-reacttk .emp-profile-form-wrap{
+        display: flex;
+        flex-direction: column;
+    }
+    .vg-reacttk .emp-photo-upload {
+        margin-left: 0px;
+        margin-bottom: 1rem;
+    }
+    .vg-reacttk .emp-profile-form-wrap .emp-profile-form{
+        order: 2;
+    }
+    .vg-reacttk .emp-photo-upload{
+        order: 1;
+    }
+    .vg-reacttk .vg-upload-drop.horizontal{
+        min-height: 163px;
+    }
+}
+// StoryBook VgForm CSS
+#storybook-root:has(.vg-reacttk){
+    background-color: var(--bkg_neutral_secondary);
+}
+#storybook-root{
+    .vg-reacttk{
+        #story--input--default--primary .vg-input-control-group, 
+        #story--input--default .vg-input-control-group, 
+        #story--input--password .vg-input-control-group, 
+        #story--input--error-validation .vg-input-control-group, 
+        #story--input--disabled .vg-input-control-group, 
+        #story--input--focus-border .vg-input-control-group, 
+        .vg-input-control-group,
+        #anchor--date-picker--default #story--date-picker--default--primary-inner, 
+        #story--date-picker--disabled-inner .vg-date-container, 
+        #story--date-picker--error-validation-inner .vg-date-container, 
+        #story--date-picker--focus-inner .vg-date-container, 
+        #anchor--date-picker--default .vg-date-container, 
+        .vg-date-container, 
+        .vg-customer-dropdown,
+        .vg-textarea-group,
+        #story--dropdown--default--primary, 
+        #story--dropdown--default, 
+        #story--dropdown--disabled, 
+        #story--dropdown--error-validation,
+        #story--dropdown--focus-border, 
+        .vg-react-select2-dropdown, 
+        #story--nested-dropdown--default--primary, 
+        #story--nested-dropdown--default, 
+        #story--nested-dropdown--with-multi-location, 
+        .vg-nested-dropdown-wapper, 
+        #story--customer-dropdown--default--primary .vg-customer-dropdown,
+        .vg-reacttk-country-dropdown-wrap .vg-country-flag-dropdown, 
+        #story--address-control--address-control--primary .vg-country-flag-dropdown{
+            width: 100%;
+            max-width: 100%;
+        }
+        @media (max-width:767px){
+            .vg-upload-drop.horizontal{
+                width: 100%;
+            }
+        }
+    }
+    @media (max-width:767px){
+        min-width: 300px;
+    }
+
+    .vg-reacttk-popup-form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        padding: 24px;
+    }
+}
+// StoryBook VgForm CSS
+

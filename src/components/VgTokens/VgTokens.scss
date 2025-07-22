@@ -1,0 +1,100 @@
+.colorToken-wrapper {
+    @media screen and (min-width: 768px) {
+        padding: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 10px;
+    }
+
+    h2 {
+        margin: 0 0 20px;
+        padding: 0 0 5px;
+        font-size: 20px;
+        font-weight: 500;
+        border-bottom: 1px solid var(--border_neutral_default);
+        color: var(--text_neutral_default);
+
+    }
+    &.typogrphy-token h2 {
+        margin: 0;
+    }
+}
+
+.colorToken-list {
+    .colorToken-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        &.typography-item{
+            margin-bottom: 0px;
+        }
+
+
+        .colorToken-box {
+            width: 150px;
+            height: 60px;
+            border-radius: 10px;
+            border: 1px solid var(--border_neutral_default);
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .colorToken-code {
+            padding-left: 20px;
+            color: var(--text_neutral_default);
+            
+            p {
+                display: flex;
+                align-items: start;
+                cursor: pointer;
+
+                span.copytoken {
+                    margin-left: 8px;
+                    display: none;
+                    align-items: center;
+
+                    svg {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+
+                .token-code {
+                    pre {
+                        font-family: monospace;
+                        margin: 5px 0 0;
+                        font-size: 15px;
+                        color: var(--text_neutral_secondary);
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .colorToken-box {
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .colorToken-code {
+                p {
+                    span.copytoken {
+                        display: flex;
+                        margin-top: 4px;
+                    }
+                }
+            }
+        }
+    }
+
+    
+    &.typography-list{
+        margin-bottom: 20px;
+        .colorToken-code {
+            p {
+                margin-bottom: 10px;
+            }
+        }
+        
+    }
+}

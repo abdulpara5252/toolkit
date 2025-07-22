@@ -1,0 +1,54 @@
+import './VgTextEditor.scss';
+import { InitialEditorStateType } from '@lexical/react/LexicalComposer';
+interface FormatProps {
+    Title: string;
+    Style: boolean;
+    PlaceHolder: string;
+    OnChange?: (e: any) => void;
+    OnClickCancle?: () => void;
+    OnClickClose?: () => void;
+    OnClickUseThisText?: (e: any) => void;
+    OnChangeRange?: (e: any) => void;
+    OnChangeTone?: (e: any) => void;
+    OnClickNext?: (e: any) => void;
+    OnClickPrevious?: (e: any) => void;
+    OnClickRegenerate?: (e: any) => void;
+    SetValue: string;
+    AiControlPopup: boolean;
+    isSubmit?: boolean;
+    setSubmit?: React.Dispatch<React.SetStateAction<boolean>>;
+    ToolbarRawData: {
+        Fontfamily: boolean;
+        Fontsize: boolean;
+        Bold: boolean;
+        Fontcolor: boolean;
+        BackgroundColor: boolean;
+        Link: boolean;
+        Underline: boolean;
+        Alignment: boolean;
+        Italic: boolean;
+        Strikethrough: boolean;
+        Clear: boolean;
+        InsertNames: boolean;
+        Undo: boolean;
+        Redo: boolean;
+        NumberListButton: boolean;
+        BulletListButton: boolean;
+    };
+    RawData?: Array<{
+        Index: number;
+        InputDescription: string;
+        Tone: string;
+        Range: number;
+    }>;
+    ToneMetadata?: [];
+    setEditorData: React.Dispatch<React.SetStateAction<InitialEditorStateType>>;
+    editorData: InitialEditorStateType;
+    AutoFocus?: boolean;
+    errorMessage: string;
+    setErrorMessage: (message: string) => void;
+    MaximumLength?: number;
+    MaximumLengthForAi?: number;
+}
+export default function Format({ Title, Style, PlaceHolder, AiControlPopup, OnChange, OnChangeTone, OnClickRegenerate, OnChangeRange, OnClickUseThisText, OnClickCancle, OnClickClose, OnClickNext, OnClickPrevious, SetValue, ToolbarRawData, setEditorData, RawData, errorMessage, setErrorMessage, MaximumLength, MaximumLengthForAi, ToneMetadata, isSubmit, setSubmit, editorData, AutoFocus }: FormatProps): JSX.Element;
+export {};

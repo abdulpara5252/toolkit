@@ -1,0 +1,88 @@
+.vg-group {
+  position: relative;
+}
+
+.vg-d-flex{
+    display: flex;
+    flex-direction: row;
+    align-items: var(--font_align_center);
+    justify-content: var(--font_align_center);
+    gap: var(--spacing_24);
+}
+
+.vg-avatar-default {
+    box-sizing: border-box;
+    border-radius: var(--radius_full);
+    background: var(--bkg_neutral_tiertiary);
+    border: var(--border_width_default) var(--border_style_solid) var(--border_neutral_strong);
+    display: flex;
+    align-items: var(--font_align_center);
+    justify-content: var(--font_align_center);
+    justify-content: var(--font_align_center);
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+    text-align: var(--font_align_center);
+}
+
+.vg-avatar-xlarge {
+    width: var(--sizing_96);
+    height: var(--sizing_96);
+}
+
+.vg-avatar-large {
+    width: var(--sizing_96);
+    height: var(--sizing_96);
+}
+
+.vg-avatar-medium {
+    width: var(--sizing_64);
+    height: var(--sizing_64);
+}
+
+.vg-avatar-small {
+    width: var(--sizing_40);
+    height: var(--sizing_40);
+}
+
+.vg-avatar-xsmall {
+    width: var(--sizing_32);
+    height: var(--sizing_32);
+}
+
+.vg-avatar-text{
+    font-family: var(--font_family_proximanova);
+    font-weight: var(--font_weight_medium);
+    text-align: var(--font_align_center);
+    color: var(--text_neutral_default);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .vg-avatar-xlarge & {
+        font-size: var(--font_size_24);
+        line-height: var(--font_height_28);
+    }
+    
+    .vg-avatar-large & {
+        font-size: var(--font_size_26);
+        line-height: var(--font_height_36);
+    }
+    
+    .vg-avatar-medium & {
+        font-size: var(--font_size_26);
+        line-height: var(--font_height_36);
+    }
+    
+    .vg-avatar-small & {
+        font-size: var(--font_size_15);
+        line-height: var(--font_height_20);
+    }
+    
+    .vg-avatar-xsmall & {
+        font-size: var(--font_size_12);
+        line-height: var(--font_height_16);
+    }
+}

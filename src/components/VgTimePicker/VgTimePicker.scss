@@ -1,0 +1,171 @@
+.vg-group {
+    position: relative;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* label */
+.vg-check-label {
+    margin-bottom: var(--spacing_4); 
+    font-weight: var(--font_weight_semibold); 
+}
+
+.vg-input-label {
+    box-sizing: border-box;
+    color: var(--text_neutral_default);
+    margin-bottom: var(--spacing_4);
+    font-weight: var(--font_weight_medium);
+    font-size: var(--font_size_15);
+    line-height: var(--font_height_20);
+    display: block;
+}
+
+.vg-input-control, 
+.vg-input-control * {
+    background-color: var(--bkg_neutral_default);
+    box-sizing: border-box;
+    padding: var(--spacing_8) var(--spacing_8);
+    color: var(--text_neutral_default);
+    border-radius: var(--radius_small);
+    border: var(--border_width_default) var(--border_style_solid) var(--border_custom_default);
+    font-size: var(--font_size_15);
+    line-height: var(--font_height_20);
+    min-height: var(--sizing_40);
+    box-shadow: var(--shadow_none);
+    width: var(--sizing-full);
+    display: block;
+    outline: var(--border-width-none);
+    background-color: var(--bkg_neutral_default);
+    -webkit-appearance: none;
+}
+.vg-input-control.vg-input-timeslot{
+    width: var(--sizing-full);
+}
+.vg-input-control-focus:focus{
+    border:var(--border_width_default) var(--border_style_solid) var(--border_blue_default);
+}
+
+.vg-input-control-error-msg {
+    font-weight: var(--font_weight_regular);
+    font-size: var(--font_size_12);
+    line-height: var(--font_height_16);
+    box-sizing: border-box;
+    color: var(--text_alert_default);
+    text-align: var(--font_align_right);
+    display: block;
+    margin-top: var(--spacing_4);
+    box-sizing: border-box;
+}
+
+/* error border */
+.vg-input-control-error, 
+.vg-input-control-error:focus {
+    border-color: var(--border_alert_default) !important;
+    background-color: var(--bkg_alert_weak) !important;
+    box-sizing: border-box;
+    box-shadow: none !important;
+}
+.vg-input-control-error .vg-image-dropdown__control-input{
+    background-color: var(--bkg_alert_weak) !important;
+}
+.vg-time-picker .vg-input-control {
+    padding-right: var(--spacing_40);
+}
+
+/* clockicon */
+.clock-icon {
+    position: absolute;
+    right: var(--spacing_6); 
+    width: var(--sizing_20); 
+    height: var(--sizing_20); 
+    pointer-events:visiblePainted;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text_neutral_secondary);
+    cursor: pointer;
+
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Dropdown of tome picker */
+.vg-time-picker-dropdown {
+    list-style-type: none;
+    padding: var(--spacing_4) var(--spacing_8);
+    margin: var(--spacing_0);
+    background-color: var(--bkg_neutral_default);
+    box-shadow: var(--shadow_1);
+    border-radius: var(--radius_medium);
+    max-height: 160px;
+    max-width: 118px;
+    min-width: 118px;
+    width: var(--sizing-full);
+    overflow-y: auto;
+    position: relative;
+    z-index: 9999;
+
+    &::-webkit-scrollbar {
+        background-color: var(--bkg_neutral_tiertiary);
+        border-radius: var(--radius_large);
+        width: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--bkg_components_selector_disabled);
+        border-radius: var(--radius_large);
+        position: relative;
+        z-index: 999;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: var(--radius_large);
+    }
+}
+
+
+
+/* Time slot */
+.vg-time-slot {
+    padding: var(--spacing_8);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: var(--radius_full);
+    text-align: var(--font_align_center);
+    color: var(--text_neutral_default);
+    font-size: var(--font_size_15);
+    line-height: var(--font_height_20);
+
+    &:hover {
+        background-color: var(--bkg_neutral_secondary);
+    }
+
+    &.selected {
+        background-color: var(--ButtonBackColor); 
+        color: var(--text_neutral_ondark);
+    }
+}
+
+
+/* disabled */
+.vg-input-control-disabled {
+    background-color:var(--bkg_neutral_tiertiary);
+    border: var( --border_width_default) var(--border_style_solid) var(--border_neutral_strong);
+    pointer-events: none;
+
+    &:focus {
+        border-color: var(--border_neutral_strong);
+    }
+}
+.required-input-mark{
+    color: var(--text_alert_default);
+}
+
+
+

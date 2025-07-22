@@ -1,0 +1,187 @@
+.simple-image-editor-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999999999;
+}
+
+.simple-image-editor{
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+    max-width: 1400px;
+    max-height: 1200px;
+    min-width: 400px;
+    min-height: 400px;
+    width: 80vw;
+    height: 80vh;
+    user-select: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    .canvas-row{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        touch-action: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-area: 2 / 1 / 3 / 2;
+        background-color:#666;  
+        border: 1px solid #f7f7f7;
+        position: relative;
+    
+                    background-image:
+    
+            linear-gradient(45deg, #555 25%, transparent 25%),
+            linear-gradient(135deg, #555 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #555 75%),
+            linear-gradient(135deg, transparent 75%, #555 75%);
+        background-size: 32px 32px;
+        /* Must be a square */
+        background-position: 0 0, 16px 0, 16px -16px, 0px 16px;
+
+        canvas{
+            display: inline-block;
+            max-height: calc(100% - 48px);
+            max-width: calc(100% - 48px);
+            vertical-align: middle;
+            position: absolute;
+            inset: 0px;
+            margin: auto;
+     
+            }
+    
+    }
+
+    .toolbar-row{
+        grid-area: 3 / 1 / 4 / 2;
+        display: flex;
+        margin-top: 10px;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        
+        .mobileRow {
+            display: flex;
+            width: 100%;
+        }
+    }
+    
+    .toolbar-row-left{
+        flex: 1;
+        .invisible-button {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+    }
+    .rotate-button{
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        font-size: 20px;
+        &.right{
+            transform: scalex(-1);
+          
+        }
+    }
+
+    .toolbar-row-center{
+        flex: 1;
+        margin-left: 42px;
+    }
+
+    .close-button{
+        cursor: pointer;
+        font-size: 30px;
+        font-weight: bold;
+        color: #000;
+        background: none;
+        border: none;
+        padding: 0;
+        align-self: flex-start;
+        margin: 0;
+        line-height: .5;
+    }
+
+    .t-row{
+        display: flex;
+        flex-direction: row;
+        
+        align-items: center;
+        gap: 10px;
+    }
+
+    .editor-header-row{
+        grid-area: 1 / 1 / 2 / 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+        flex-direction: row;
+        .editor-header-title {
+            h4 {
+                margin-top: 0;
+                margin-bottom: 0;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .simple-image-editor {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+
+        .editor-header-row {
+            .editor-header-title {
+                h4 {
+                    margin-top: 0;
+                }
+            }
+        }
+        .canvas-row canvas {
+            max-width: 100%;
+            width: 100%;
+        }
+        .toolbar-row {
+            max-width: 100%;
+        }
+        .toolbar-row-center {
+            margin-left: 0;
+        }
+        .toolbar-row {
+            display: flex;
+            flex-direction: column;
+            .mobileRow {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .rotationWrap {
+                    flex: 0;
+                }    
+            }
+        }
+        .toolbar-save-close-row {
+            width: 100%;
+        }
+    }
+}

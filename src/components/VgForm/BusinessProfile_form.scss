@@ -1,0 +1,234 @@
+@import "../../common/vg-theme-token.css";
+@import "../../common/vg-typography-token.css";
+
+* {
+    font-family: "proxima-nova", sans-serif;
+    box-sizing: border-box;
+    scrollbar-color: rgba(2, 2, 2, 0.5) #f6f4f3;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    color: #333;
+    font-weight: 400;
+}
+
+.App {
+    background-color: var(--bkg_neutral_secondary);
+}
+
+h2.form-title {
+    text-align: left;
+    border-bottom: 1px solid var(--border_neutral_default);
+    padding: 0 0 16px;
+    margin: 0 0 20px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    color: var(--text_neutral_secondary);
+}
+
+.form-container {
+    padding: 20px 20px 0;
+    text-align: left;
+    background-color: var(--bkg_neutral_default);
+    max-width: 1050px;
+
+    @media (min-width:767px) {
+        padding-bottom: 75px;
+    }
+}
+
+.vgform {
+    max-width: 800px;
+    width: 100%;
+
+    .fields {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -8px;
+        margin-right: -8px;
+
+        .field {
+            padding-left: 8px;
+            padding-right: 8px;
+            width: 100%;
+            flex: 50% 0 0%;
+        }
+    }
+
+    .fields > .field,
+    .field {
+        margin-bottom: 16px;
+    }
+
+    .field {
+        .vg-textarea-group {
+            width: 100%;
+        }
+    }
+
+    .switch-full {
+        padding: 24px 0;
+        margin: 0;
+        border-top: 1px solid var(--border_neutral_default);
+        
+
+        &.switch-full-last {
+            border-bottom: 1px solid var(--border_neutral_default);
+            margin-bottom: 16px;
+        }
+    }
+
+    .addresstextfileWrap {
+        width: 100%;
+    }
+
+    .vg-date-container,
+    .vg-time-picker {
+        width: 100%;
+
+        .vg-input-control {
+            width: 100%;
+            min-width: 100%;
+        }        
+    }
+}
+
+.vgform-half {
+    @media (min-width:1023px) {
+        display: flex;
+    }
+
+    @media (max-width: 1023px) {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    
+
+    .vgform {
+
+        @media (min-width:1023px) {
+            width: 55%;
+            margin-bottom: 40px;
+            padding-right: 20px;
+        }
+
+        @media (max-width: 1023px) {
+            width: 100%;
+        }
+        
+    }
+
+    .business-map { 
+        @media (min-width: 1023px) {
+            width: 50%;
+        }
+
+        @media (max-width:767px) {
+            width: 100%;
+            height: 500px;
+        }
+    }
+}
+
+.business-hour-one {
+    padding: 0 0 8px 50px;
+}
+
+.fields-action {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid var(--border_neutral_default);
+    border-right: 1px solid var(--border_neutral_default);
+    padding: 16px;
+    background-color: var(--bkg_neutral_secondary);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 1050px;
+
+    @media (min-width:767px) {
+        button {
+            margin-left: 16px;
+        }
+    }
+}
+
+.chekcbox-group {
+    margin: 10px 0 16px;
+    padding: 0;
+    list-style: none;
+    
+    li {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width:767px) {
+    .form-container {
+        padding: 0 0 150px;
+    }
+
+    .vgform-container {
+        padding: 20px;
+        overflow: auto;
+        height: calc(100vh - 150px);
+    }
+
+    .vgform {
+        .fields {
+            flex-direction: column;
+        }  
+    }
+
+    .fields-action {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: var(--bkg_neutral_secondary);
+        display: flex;
+        flex-wrap: wrap;
+        padding: var(--spacing_16) var(--spacing_20);
+        z-index: 5;
+
+        button {
+            margin-bottom: 16px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .d-none-mob {
+        display: none !important;
+    }
+}
+.business-map > div {
+    width: 485.09px;
+    height: 500px;
+}
+@media(max-width:767px){
+    .business-map > div > div{
+        width: 100% !important;
+    }
+    .business-map > div {
+        width: 100%;
+        height: 500px;
+    }
+}
+

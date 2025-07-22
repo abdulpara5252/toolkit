@@ -1,0 +1,263 @@
+.vg-group {
+  position: relative;
+}
+
+.vg-tooltip {
+  position: relative;
+  display: inline-block;
+  margin-left: var(--spacing_4);
+  color: var(--text_neutral_default);
+
+  .vg-tooltip-sms {
+    border-radius: var(--radius_small);
+    background-color: var(--bkg_components_status_strong);
+    color: var(--text_neutral_inverse);
+    font-size: var(--font_size_15);
+    line-height: var(--font_height_20);
+    padding: var(--spacing_8) var(--spacing_12);
+    max-width: 360px;
+    width: max-content;
+    font-weight: var(--font_weight_regular);
+    text-align: var(--font_align_center);
+    position: absolute;
+    z-index: 999;
+
+    &:after {
+      border-top: 8px var(--border_style_solid) var(--bkg_components_status_strong);
+      bottom: -8px;
+      // left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: var(--sizing_none);
+      height: var(--sizing_none);
+      border-left: 8px var(--border_style_solid) transparent;
+      border-right: 8px var(--border_style_solid) transparent;
+      position: absolute;
+      content: "";
+    }
+  }
+
+  .vg-tooltip-sms
+  .vg-tooltip-group {
+    margin-top: var(--spacing_16);
+  }
+
+  &:hover .vg-tooltip-sms {
+    display: block;
+  }
+
+  &.vg-tooltip-top-center,
+  &.vg-tooltip-top-left {
+    .vg-tooltip-sms {
+      bottom: 100%;
+      margin-bottom: 8px;
+      animation: vgnmoveuptooltip 0.4s forwards;
+    }
+  }
+
+  &.vg-tooltip-top-center .vg-tooltip-sms {
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+  }
+
+  &.vg-tooltip-top-left .vg-tooltip-sms {
+    left: -35px;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+
+    &:after {
+      border-top: 8px var(--border_style_solid) var(--bkg_components_status_strong);
+      bottom: -8px;
+      left: 35px;
+      -webkit-transform: translateX(0px);
+      transform: translateX(0px);
+    }  
+  }
+
+  &.vg-tooltip-top-right .vg-tooltip-sms {
+    bottom: 100%;
+    right: -35px;
+    margin-bottom: 8px;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    animation: vgnmoveuptooltip 0.4s forwards;
+
+    &:after {
+      bottom: -8px;
+      right: 35px;
+      left: auto;
+      -webkit-transform: translateX(0px);
+      transform: translateX(0px);
+      border-top: 8px var(--border_style_solid) var(--bkg_components_status_strong);
+    }
+  }
+
+  &.vg-tooltip-bottom-center .vg-tooltip-sms {
+    top: 100%;
+    left: 50%;
+    margin-top: 8px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    animation: vgnmovedowntooltip 0.4s forwards;
+
+    &:after {
+      border-bottom: 8px var(--border_style_solid) var(--bkg_components_status_strong);
+      top: -8px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      border-top: 0;
+    }
+  }
+
+  &.vg-tooltip-bottom-left {
+    .vg-tooltip-sms {
+      top: 100%;
+      left: -35px;
+      margin-top: 8px;
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      animation: vgnmovedowntooltip 0.4s forwards;
+
+      &:after {
+        border-bottom: 8px solid var(--bkg_components_status_strong); 
+        top: -8px;
+        left: 35px;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        border-top: 0;
+      }
+    }
+  }
+
+  &.vg-tooltip-bottom-right {
+    .vg-tooltip-sms {
+      top: 100%;
+      right: -35px;
+      margin-top: 8px;
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      animation: vgnmovedowntooltip 0.4s forwards;
+
+      &:after {
+        border-bottom: 8px var(--border_style_solid) var(--bkg_components_status_strong);
+        top: -8px;
+        right: 35px;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        border-top: 0;
+        left: auto;
+      }
+    }
+  }
+
+  &.vg-tooltip-left {
+    .vg-tooltip-sms {
+      top: 50%;
+      right: 100%;
+      margin-right: 8px;
+      transform: translateY(-50%);
+
+      &:after {
+        border-left: 8px var(--border_style_solid) var(--bkg_components_status_strong);
+        border-top: 8px var(--border_style_solid) transparent;
+        border-bottom: 8px var(--border_style_solid) transparent;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  } 
+  
+  &.vg-tooltip-right {
+    .vg-tooltip-sms {
+      top: 50%;
+      left: 100%;
+      margin-left: 8px;
+      transform: translateY(-50%);
+
+      &:after {
+        border-right: 8px var(--border_style_solid) var(--bkg_components_status_strong);
+        border-top: 8px var(--border_style_solid) transparent;
+        border-bottom: 8px var(--border_style_solid) transparent;
+        right: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .vg-tooltip-sms {
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 8px var(--border_style_solid) transparent;
+      border-right: 8px var(--border_style_solid) transparent;
+      border-top: 8px var(--border_style_solid) var(--bkg_components_status_strong); 
+    }
+
+    &.no-arrow:after {
+      display: none;
+    }
+  }
+
+  &.vg-tooltip-top-center .vg-tooltip-sms:after {
+    bottom: -8px; 
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes vgnmoveuptooltip{
+  0% {
+    margin-bottom: 8px;
+  }
+  50% {
+      margin-bottom: 12px;
+  }
+  100% {
+      margin-bottom: 8px;
+  }
+}
+
+@keyframes vgnmovedowntooltip{
+  0% {
+    margin-top: 8px;
+  }
+  50% {
+      margin-top: 12px;
+  }
+  100% {
+      margin-top: 8px;
+  }
+}
+
+@media(max-width:767px){
+  .vg-tooltip-group{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+}
+
+.vg-tooltip-sms.vg-text-left {
+  text-align: left;
+}
+
+.vg-tooltip-sms.vg-text-center {
+  text-align: center;
+}
+
+.vg-tooltip-sms.vg-text-right {
+  text-align: right;
+}
+.vg-tooltip svg{
+  width: 16px;
+  height: 16px;
+}
+.vg-tooltiptext{
+  color: var(--text_neutral_default);
+}

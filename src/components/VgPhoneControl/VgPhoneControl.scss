@@ -1,0 +1,769 @@
+.vg-reacttk-country-dropdown-wrap {
+    position: relative;
+
+    .vg-addresswithcountry,
+    .vg-input-control-error .vg-addresswithcountry {
+        position: relative;
+        //z-index: 9;
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .countrydropdown {
+            height: 40px;
+            background-position: 59px;
+            background-repeat: no-repeat;
+            background-size: 25px auto;
+            border: var(--border_width_default) var(--border_style_solid) var(--border_neutral_strong);
+            border-radius: var(--border_width_strong) 0 0 var(--border_width_strong);
+            cursor: pointer;
+            float: left;
+            left: 0;
+            line-height: var(--font_height_40);
+            margin: var(--spacing_0);
+            position: absolute;
+            top: 0;
+            width: 66px;
+            -webkit-tap-highlight-color: transparent;
+
+            &:before {
+                border-color: var(--icon_neutral_default) transparent transparent;
+                border-radius: var(--radius_small);
+                border-style: var(--border_style_solid);
+                border-width: 6px 6px 0;
+                content: "";
+                display: block;
+                margin-top: -2px;
+                position: absolute;
+                right: 7px;
+                top: 50%;
+            }
+
+            .selectedcountry {
+                background-repeat: no-repeat;
+                background-position: 8px center;
+                background-size: 32px 24px;
+                height: var(--sizing-full);
+                width: var(--sizing-full);
+
+                &.aus-f {
+                    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/aus-flag-img.png');
+                }
+                &.canada-f {
+                    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/canada-flag-img.png');
+                }
+                &.uk-f {
+                    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/uk-flag-img.png');
+                }
+                &.us-f {
+                    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/us-flag-img.png');
+                }
+            }
+        }
+
+        .selectedcountry {
+            display: block;
+            height: 38px;
+            position: relative;
+            width: var(--sizing_64);
+        }
+        .vg-input-control-error-msg{
+            float: right;
+        }
+    }
+
+    .disable-country {
+        .countrydropdown{
+            width: 51px;
+            &::before{
+                display: none;
+            }
+            .country-code{
+                left: 60px;
+            }
+        }
+        .select-country-mar.input-focus-relative{
+            margin-left: 50px !important;
+
+            .vg-input-control{
+                padding-left:35px;
+            }
+        }
+    }
+
+    .vg-country-flag-dropdown {
+        .country-code {
+            align-items: center;
+            color: var(--text_neutral_default);
+            display: flex;
+            font-size: var(--font_size_15);
+            font-weight: var(--font_weight_regular);
+            height: 100%;
+            left: 75px;
+            line-height: var(--font_height_40);
+            min-width: var(--sizing_30);
+            position: absolute;
+            text-align: var(--font_align_center);
+            width: var(--sizing_auto);
+            top: 0;
+            z-index: 9;
+        }
+
+        .vg-input-control {
+            padding-left: var(--spacing_40);
+        }
+    }
+
+    .add-input-focus-relative input {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        font-size: var(--font_size_16);
+        font-weight: var(--font_weight_regular);
+        height: var(--sizing_40);
+        margin-left: var(--spacing_0);
+        padding-bottom: var(--spacing_0);
+        padding-right: var(--spacing_10);
+        padding-top: var(--spacing_0);
+    }
+
+    .select-country-mar {
+        &.input-focus-relative {
+        margin-left: 65px !important;
+        position: relative;
+        }   
+    }
+
+    /* Country Dropdown changes */
+    .vg-country-dropdown-search__control {
+        display: none;
+    }
+
+    .all-country-flag-react {
+        .vg-country-dropdown-search__menu {
+            margin-top: 3px;
+            width: 328px;
+            background-color: var(--bkg_neutral_default);
+            z-index: 999;
+        }
+    }
+
+    .vg-country-dropdown-search__group {
+        padding: var(--spacing_0);
+
+        .vg-country-dropdown-search__group-heading {
+            color: var(--text_neutral_default);
+            font-size: var(--font_size_15);
+            font-weight: var(--font_weight_semibold);
+            line-height: var(--font_height_20);
+            padding: var(--spacing_8) var(--spacing_10);
+            text-transform: none;
+        }
+
+        .vg-country-dropdown-search__option {
+            padding: var(--spacing_0);
+
+            &.vg-country-dropdown-search__option--is-selected,
+            &.vg-country-dropdown-search__option--is-focused {
+                background-color: var(--bkg_neutral_secondary);
+                color: var(--text_neutral_default);
+            }
+        }
+    }
+
+    .all-country-flag-react {
+        .countrys-Code {
+            background-position: 8px 11px;
+            background-repeat: no-repeat;
+            background-size: 20px auto;
+
+            &.uk-f {
+                background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/united-kingdom-flag.svg');
+            }
+            &.us-f {
+                background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/united-states-flag.svg');
+            }
+            &.canada-f {
+                background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/canada-flag.svg');
+            }
+            &.aus-f {
+                background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/australia-flag.svg');
+            }
+        }
+    }
+
+    .vg-country-dropdown-search__option {
+        .select2-result-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: var(--font_size_15);
+            line-height: var(--font_height_20);
+            padding: 9px 11px var(--spacing_8) var(--spacing_36);
+            color: var(--text_neutral_default);
+        }
+    }
+}
+
+.input-focus-relative input {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+@media (max-width:767px){
+    .vg-reacttk-country-dropdown-wrap .input-focus-relative input,
+    .vg-reacttk-country-dropdown-wrap .vg-addresswithcountry .countrydropdown, 
+    .vg-reacttk-country-dropdown-wrap .vg-input-control-error .vg-addresswithcountry .countrydropdown {
+        height: 48px !important;
+    }
+    .vg-reacttk-country-dropdown-wrap .all-country-flag-react .vg-country-dropdown-search__menu{
+        bottom: var(--spacing_0);
+        left: var(--spacing_0);
+        position: fixed;
+        right: var(--spacing_0);
+        top: var(--spacing_0);
+        width: var(--sizing-full);
+        z-index: 99;
+        margin: var(--spacing_0);
+    }
+    .vg-reacttk-country-dropdown-wrap .vg-country-dropdown-search__group-heading{
+        border-bottom: var(--border_width_default) var(--border_style_solid) var(--border_neutral_strong);
+        font-size: var(--font_size_12);
+        font-weight: var(--font_weight_semibold);
+        line-height: var(--font_height_20);
+        margin: var(--spacing_0);
+        text-transform: uppercase;
+    }
+    .vg-reacttk-country-dropdown-wrap .vg-country-dropdown-search__group .vg-country-dropdown-search__option.vg-country-dropdown-search__option--is-focused, .vg-reacttk-country-dropdown-wrap .vg-country-dropdown-search__group .vg-country-dropdown-search__option.vg-country-dropdown-search__option--is-selected{
+        background-color: var(--bkg_neutral_secondary);
+        color: var(--text_neutral_default);
+    }
+    .vg-reacttk-country-dropdown-wrap .all-country-flag-react .countrys-Code {
+        background-position: 16px 15px;
+    }
+    .vg-reacttk-country-dropdown-wrap .vg-country-dropdown-search__option .select2-result-label {
+        font-size: var(--font_size_16);
+        padding: 13px 32px 13px 44px;
+    }
+}
+.required-input-mark{
+    color: var(--text_alert_default);
+}
+#phonecountry .vg-reacttk-country-dropdown-wrap{
+    z-index: 999;
+}
+
+.countrys-Code.us-f, .selectedcountry.us-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/united-states-flag.svg');}
+.countrys-Code.uk-f, .selectedcountry.uk-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/united-kingdom-flag.svg');}
+.countrys-Code.canada-f, .selectedcountry.canada-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/canada-flag.svg');}
+.countrys-Code.aus-f, .selectedcountry.aus-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/australia-flag.svg');}
+.countrys-Code.in-f, .selectedcountry.in-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/india-flag.svg');}
+.countrys-Code.af-f, .selectedcountry.af-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/afghanistan-flag.svg');}
+.countrys-Code.al-f, .selectedcountry.al-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/albania-flag.svg');}
+.countrys-Code.ax-f, .selectedcountry.ax-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/aland-islands-flag.svg');}
+.countrys-Code.dz-f, .selectedcountry.dz-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/algeria-flag.svg');}
+.countrys-Code.as-f, .selectedcountry.as-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/american-samoa-flag.svg');}
+.countrys-Code.ad-f, .selectedcountry.ad-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/andorra-flag.svg');}
+.countrys-Code.ao-f, .selectedcountry.ao-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/angola-flag.svg');}
+.countrys-Code.ai-f, .selectedcountry.ai-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/anguilla-flag.svg');}
+.countrys-Code.aq-f, .selectedcountry.aq-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/antarctica-flag.svg');}
+.countrys-Code.ag-f, .selectedcountry.ag-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/antigua-barbuda-flag.svg');}
+.countrys-Code.ar-f, .selectedcountry.ar-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/argentina-flag.svg');}
+.countrys-Code.am-f, .selectedcountry.am-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/armenia-flag.svg');}
+.countrys-Code.aw-f, .selectedcountry.aw-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/aruba-flag.svg');}
+.countrys-Code.ac-f, .selectedcountry.ac-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/ascension-island-flag.svg');}
+.countrys-Code.at-f, .selectedcountry.at-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/austria-flag.svg');}
+.countrys-Code.az-f, .selectedcountry.az-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/azerbaijan-flag.svg');}
+.countrys-Code.bs-f, .selectedcountry.bs-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/bahamas-flag.svg');}
+.countrys-Code.bh-f, .selectedcountry.bh-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/bahrain-flag.svg');}
+.countrys-Code.bd-f, .selectedcountry.bd-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/bangladesh-flag.svg');}
+.countrys-Code.bb-f, .selectedcountry.bb-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/barbados-flag.svg');}
+.countrys-Code.by-f, .selectedcountry.by-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/belarus-flag.svg');}
+.countrys-Code.be-f, .selectedcountry.be-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/belgium-flag.svg');}
+.countrys-Code.bz-f, .selectedcountry.bz-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/belize-flag.svg');}
+.countrys-Code.bj-f, .selectedcountry.bj-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/benin-flag.svg');}
+.countrys-Code.bm-f, .selectedcountry.bm-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/bermuda-flag.svg');}
+.countrys-Code.bt-f, .selectedcountry.bt-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/bhutan-flag.svg');}
+.countrys-Code.bo-f, .selectedcountry.bo-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/bolivia-flag.svg');}
+.countrys-Code.ba-f, .selectedcountry.ba-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/bosnia-herzegovina-new-flag.svg');}
+.countrys-Code.bw-f, .selectedcountry.bw-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/botswana-flag.svg');}
+.countrys-Code.bv-f, .selectedcountry.bv-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/bouvet-Island-flag.svg');}
+.countrys-Code.br-f, .selectedcountry.br-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/brazil-flag.svg');}
+.countrys-Code.io-f, .selectedcountry.io-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/british-indian-ocean-territory-flag.svg');}
+.countrys-Code.bn-f, .selectedcountry.bn-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/brunei-darussalam-flag.svg');}
+.countrys-Code.bg-f, .selectedcountry.bg-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/bulgaria-flag.svg');}
+.countrys-Code.bf-f, .selectedcountry.bf-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/burkina-faso-flag.svg');}
+.countrys-Code.bi-f, .selectedcountry.bi-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/burundi-flag.svg');}
+.countrys-Code.kh-f, .selectedcountry.kh-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/cambodia-flag.svg');}
+.countrys-Code.cm-f, .selectedcountry.cm-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/cameroon-flag.svg');}
+.countrys-Code.cv-f, .selectedcountry.cv-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/cabo-verde-flag.svg');}
+.countrys-Code.ky-f, .selectedcountry.ky-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/cayman-islands-flag.svg');}
+.countrys-Code.cf-f, .selectedcountry.cf-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/central-african-republic-flag.svg');}
+.countrys-Code.td-f, .selectedcountry.td-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/chad-flag.svg');}
+.countrys-Code.cl-f, .selectedcountry.cl-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/chile-flag.svg');}
+.countrys-Code.cx-f, .selectedcountry.cx-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/christmas-island-flag.svg');}
+.countrys-Code.cc-f, .selectedcountry.cc-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/cocos-keeling-islands-flag.svg');}
+.countrys-Code.co-f, .selectedcountry.co-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/colombia-flag.svg');}
+.countrys-Code.km-f, .selectedcountry.km-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/comoros-flag.svg');}
+.countrys-Code.ck-f, .selectedcountry.ck-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/cook-islands-flag.svg');}
+.countrys-Code.cr-f, .selectedcountry.cr-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/costa-rica-flag.svg');}
+.countrys-Code.ci-f, .selectedcountry.ci-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/côte-dIvoire-Ivory-coast-flag.svg');}
+.countrys-Code.hr-f, .selectedcountry.hr-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/croatia-hrvatska-flag.svg');}
+.countrys-Code.cw-f, .selectedcountry.cw-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/curaçao-flag.svg');}
+.countrys-Code.cy-f, .selectedcountry.cy-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/cyprus-flag.svg');}
+.countrys-Code.cz-f, .selectedcountry.cz-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/czech-republic-flag.svg');}
+.countrys-Code.dk-f, .selectedcountry.dk-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/denmark-flag.svg');}
+.countrys-Code.dj-f, .selectedcountry.dj-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/djibouti-falg.svg');}
+.countrys-Code.dm-f, .selectedcountry.dm-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/dominica-falg.svg');}
+.countrys-Code.do-f, .selectedcountry.do-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/dominican-republic-flag.svg');}
+.countrys-Code.ec-f, .selectedcountry.ec-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/ecuador-flag.svg');}
+.countrys-Code.eg-f, .selectedcountry.eg-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/ecuador-flag.svg');}
+.countrys-Code.sv-f, .selectedcountry.sv-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/ei-salvador-flag.svg'); }
+.countrys-Code.gq-f, .selectedcountry.gq-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/equatorial-guinea-flag.svg');}
+.countrys-Code.er-f, .selectedcountry.er-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/eritrea-new-flag.svg'); }
+.countrys-Code.ee-f, .selectedcountry.ee-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/estonia-flag.svg');}
+.countrys-Code.et-f, .selectedcountry.et-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/ethiopia-flag.svg');}
+.countrys-Code.fk-f, .selectedcountry.fk-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/falkland-islands-flag.svg');}
+.countrys-Code.fo-f, .selectedcountry.fo-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/faroe-islands-flag.svg');}
+.countrys-Code.fj-f, .selectedcountry.fj-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/fiji-flag.svg');}
+.countrys-Code.fi-f, .selectedcountry.fi-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/finland-flag.svg');}
+.countrys-Code.fr-f, .selectedcountry.fr-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/france-flag.svg');}
+.countrys-Code.gf-f, .selectedcountry.gf-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/french-guiana-flag.svg');}
+.countrys-Code.pf-f, .selectedcountry.pf-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/french-polynesia-flag.svg');}
+.countrys-Code.tf-f, .selectedcountry.tf-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/french-southern-antarctic-lands-flag.svg'); }
+.countrys-Code.gm-f, .selectedcountry.gm-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/gambia-flag.svg'); }
+.countrys-Code.ge-f, .selectedcountry.ge-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/georgia-flag.svg'); }
+.countrys-Code.de-f, .selectedcountry.de-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/germany-flag.svg'); }
+.countrys-Code.gh-f, .selectedcountry.gh-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/ghana-flag.svg');}
+.countrys-Code.gr-f, .selectedcountry.gr-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/greece-flag.svg');}
+.countrys-Code.gd-f, .selectedcountry.gd-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/grenada-flag.svg');}
+.countrys-Code.gi-f, .selectedcountry.gi-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/gibraltar-flag.svg');}
+.countrys-Code.gl-f, .selectedcountry.gl-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/greenland-flag.svg');}
+.countrys-Code.gn-f, .selectedcountry.gn-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/guinea-flag.svg');}
+.countrys-Code.gp-f, .selectedcountry.gp-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/guadeloupe-flag.svg');}
+.countrys-Code.gt-f, .selectedcountry.gt-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/guatemala-flag.svg');}
+.countrys-Code.gu-f, .selectedcountry.gu-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/guam-flag.svg'); }
+.countrys-Code.gw-f, .selectedcountry.gw-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/guinea-bissau-flag.svg'); }
+.countrys-Code.gy-f, .selectedcountry.gy-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/guyana-flag.svg');}
+.countrys-Code.ht-f, .selectedcountry.ht-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/haiti-flag.svg');}
+.countrys-Code.hk-f, .selectedcountry.hk-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/hong-kong-flag.svg');}
+.countrys-Code.hm-f, .selectedcountry.hm-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/heard-mc-donald-islands-new-flag.svg');}
+.countrys-Code.hn-f, .selectedcountry.hn-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/honduras-flag.svg');}
+.countrys-Code.hu-f, .selectedcountry.hu-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/hungary-flag.svg');}
+.countrys-Code.id-f, .selectedcountry.id-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/indonesia-flag.svg');}
+.countrys-Code.ie-f, .selectedcountry.ie-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/ireland-flag.svg');}
+.countrys-Code.il-f, .selectedcountry.il-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/isreal-flag.svg');}
+.countrys-Code.im-f, .selectedcountry.im-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/isle-of-man-flag.svg');}
+.countrys-Code.iq-f, .selectedcountry.iq-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/iraq-flag.svg');}
+.countrys-Code.is-f, .selectedcountry.is-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/iceland-flag.svg');}
+.countrys-Code.it-f, .selectedcountry.it-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/italy-flag.svg');}
+.countrys-Code.je-f, .selectedcountry.je-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/jersey-flag.svg');}
+.countrys-Code.jm-f, .selectedcountry.jm-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/jamaica-flag.svg');}
+.countrys-Code.jo-f, .selectedcountry.jo-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/jordan-flag.svg');}
+.countrys-Code.jp-f, .selectedcountry.jp-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/japan-flag.svg');}
+.countrys-Code.ke-f, .selectedcountry.ke-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/kenia-flag.svg');}
+.countrys-Code.kg-f, .selectedcountry.kg-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/kyrgyzstan-flag.svg');}
+.countrys-Code.ki-f, .selectedcountry.ki-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/kiribati-flag.svg');}
+.countrys-Code.kw-f, .selectedcountry.kw-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/kuwait-flag.svg');}
+.countrys-Code.kz-f, .selectedcountry.kz-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/kazakhstan-flag.svg');}
+.countrys-Code.xk-f, .selectedcountry.xk-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/kosovo-flag.svg');}
+.countrys-Code.la-f, .selectedcountry.la-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/laos-flag.svg');}
+.countrys-Code.lb-f, .selectedcountry.lb-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/lebanon-flag.svg');}
+.countrys-Code.li-f, .selectedcountry.li-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/liechtenstein-flag.svg');}
+.countrys-Code.lr-f, .selectedcountry.lr-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/liberia-flag.svg');}
+.countrys-Code.ls-f, .selectedcountry.ls-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/lesotho-flag.svg');}
+.countrys-Code.lt-f, .selectedcountry.lt-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/lithuania-flag.svg');}
+.countrys-Code.lu-f, .selectedcountry.lu-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/luxembourg-flag.svg');}
+.countrys-Code.lv-f, .selectedcountry.lv-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/latvia-flag.svg');}
+.countrys-Code.ly-f, .selectedcountry.ly-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/libya-flag.svg');}
+.countrys-Code.ma-f, .selectedcountry.ma-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/macao-flag.svg');}
+.countrys-Code.mc-f, .selectedcountry.mc-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/monaco-flag.svg');}
+.countrys-Code.md-f, .selectedcountry.md-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/moldova-flag.svg');}
+.countrys-Code.me-f, .selectedcountry.me-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/montenegro-flag.svg');}
+.countrys-Code.mg-f, .selectedcountry.mg-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/madagascar-flag.svg');}
+.countrys-Code.mh-f, .selectedcountry.mh-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/marshall-islands-flag.svg');}
+.countrys-Code.ml-f, .selectedcountry.ml-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/mali-flag.svg');}
+.countrys-Code.yt-f, .selectedcountry.yt-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/mayotte-flag.svg');}
+.countrys-Code.mm-f, .selectedcountry.mm-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/myanmar-flag.svg');}
+.countrys-Code.mn-f, .selectedcountry.mn-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/mongolia-flag.svg');}
+.countrys-Code.my-f, .selectedcountry.my-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/malaysia-flag.svg');}
+.countrys-Code.mq-f, .selectedcountry.mq-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/Martinique-flag.svg');}
+.countrys-Code.mr-f, .selectedcountry.mr-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/mauritania-flag.svg');}
+.countrys-Code.ms-f, .selectedcountry.ms-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/montserrat-flag.svg');}
+.countrys-Code.mt-f, .selectedcountry.mt-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/malta-flag.svg');}
+.countrys-Code.mu-f, .selectedcountry.mu-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/mauritius-flag.svg');}
+.countrys-Code.mv-f, .selectedcountry.mv-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/maldives-flag.svg');}
+.countrys-Code.mw-f, .selectedcountry.mw-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/malawi-flag.svg');}
+.countrys-Code.mx-f, .selectedcountry.mx-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/mexico-flag.svg');}
+.countrys-Code.mz-f, .selectedcountry.mz-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/mozambique-flag.svg');}
+.countrys-Code.na-f, .selectedcountry.na-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/namibia-flag.svg');}
+.countrys-Code.ne-f, .selectedcountry.ne-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/niger-flag.svg');}
+.countrys-Code.nf-f, .selectedcountry.nf-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/norfolk-island-flag.svg');}
+.countrys-Code.mp-f, .selectedcountry.mp-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/northern-mariana-islands-flag.svg');}
+.countrys-Code.ng-f, .selectedcountry.ng-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/nigeria-flag.svg');}
+.countrys-Code.ni-f, .selectedcountry.ni-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/nicaragua-flag.svg');}
+.countrys-Code.nl-f, .selectedcountry.nl-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/netherlands-flag.svg');}
+.countrys-Code.no-f, .selectedcountry.no-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/norway-flag.svg');}
+.countrys-Code.np-f, .selectedcountry.np-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/nepal-flag.svg');}
+.countrys-Code.nr-f, .selectedcountry.nr-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/nauru-flag.svg');}
+.countrys-Code.nu-f, .selectedcountry.nu-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/niue-flag.svg');}
+.countrys-Code.nz-f, .selectedcountry.nz-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/new-zealand-flag.svg');}
+.countrys-Code.om-f, .selectedcountry.om-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/oman-flag.svg');}
+.countrys-Code.pa-f, .selectedcountry.pa-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/panama-flag.svg');}
+.countrys-Code.pe-f, .selectedcountry.pe-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/peru-flag.svg');}
+.countrys-Code.pg-f, .selectedcountry.pg-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/papua-new-guinea.svg');}
+.countrys-Code.ph-f, .selectedcountry.ph-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/philippines-flag.svg');}
+.countrys-Code.pk-f, .selectedcountry.pk-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/pakistan-flag.svg');}
+.countrys-Code.pl-f, .selectedcountry.pl-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/poland-flag.svg');}
+.countrys-Code.pn-f, .selectedcountry.pn-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/pitcairn-islands-flag.svg');}
+.countrys-Code.pr-f, .selectedcountry.pr-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/puerto-rico-flag.svg');}
+.countrys-Code.ps-f, .selectedcountry.ps-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/palestine-flag.svg');}
+.countrys-Code.pt-f, .selectedcountry.pt-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/portugal-flag.svg');}
+.countrys-Code.pw-f, .selectedcountry.pw-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/palau-flag.svg');}
+.countrys-Code.py-f, .selectedcountry.py-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/paraguay-flag.svg');}
+.countrys-Code.qa-f, .selectedcountry.qa-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/qatar-flag.svg');}
+.countrys-Code.re-f, .selectedcountry.re-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/reunion-flag.svg');}
+.countrys-Code.ro-f, .selectedcountry.ro-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/romania-flag.svg');}
+.countrys-Code.ru-f, .selectedcountry.ru-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/russian-federation-flag.svg');}
+.countrys-Code.rw-f, .selectedcountry.rw-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/rwanda-flag.svg');}
+.countrys-Code.sm-f, .selectedcountry.sm-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/san-marino-flag.svg');}
+.countrys-Code.ws-f, .selectedcountry.ws-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/samoa-flag.svg');}
+.countrys-Code.sa-f, .selectedcountry.sa-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/saudi-arabia-flag.svg');}
+.countrys-Code.gs-f, .selectedcountry.gs-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/s-georgia-s-sandwich-islands-flag.svg');}
+.countrys-Code.sb-f, .selectedcountry.sb-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/solomon-islands-flag.svg');}
+.countrys-Code.sn-f, .selectedcountry.sn-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/senegal-flag.svg');}
+.countrys-Code.rs-f, .selectedcountry.rs-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/serbia-flag.svg');}
+.countrys-Code.sc-f, .selectedcountry.sc-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/seychelles-flag.svg');}
+.countrys-Code.se-f, .selectedcountry.se-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/sweden-flag.svg');}
+.countrys-Code.sg-f, .selectedcountry.sg-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/singapore-flag.svg');}
+.countrys-Code.lk-f, .selectedcountry.lk-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/sri-lanka-flag.svg');}
+.countrys-Code.si-f, .selectedcountry.si-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/slovenia-flag.svg');}
+.countrys-Code.sj-f, .selectedcountry.sj-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/svalbard-jan-mayen.svg');}
+.countrys-Code.sk-f, .selectedcountry.sk-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/slovakia-flag.svg');}
+.countrys-Code.sl-f, .selectedcountry.sl-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/sierra-leone-flag.svg');}
+.countrys-Code.es-f, .selectedcountry.es-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/spain-flag.svg');}
+.countrys-Code.za-f, .selectedcountry.za-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/south-africa-flag.svg');}
+.countrys-Code.kr-f, .selectedcountry.kr-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/korea-south-flag.svg');}
+.countrys-Code.so-f, .selectedcountry.so-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/somalia-flag.svg');}
+.countrys-Code.sr-f, .selectedcountry.sr-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/suriname-img.svg');}
+.countrys-Code.ss-f, .selectedcountry.ss-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/south-sudan-flag.svg');}
+.countrys-Code.st-f, .selectedcountry.st-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/sao-tome-principe-img.svg');}
+.countrys-Code.sx-f, .selectedcountry.sx-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/sint-maarten-flag.svg');}
+.countrys-Code.ch-f, .selectedcountry.ch-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/switzerland-flag.svg');}
+.countrys-Code.sz-f, .selectedcountry.sz-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/swaziland-flag.svg');}
+.countrys-Code.ta-f, .selectedcountry.ta-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/tristan-cunha-flag.svg');}
+.countrys-Code.tc-f, .selectedcountry.tc-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/turks-caicos-islands-flag.svg');}
+.countrys-Code.tg-f, .selectedcountry.tg-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/togo-flag.svg');}
+
+
+
+.countrys-Code.th-f, .selectedcountry.th-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/thailand-flag.svg');
+}
+
+.countrys-Code.tj-f, .selectedcountry.tj-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/tajikistan-flag.svg');
+}
+
+.countrys-Code.tk-f, .selectedcountry.tk-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/tokelau-flag.svg');
+}
+
+.countrys-Code.tl-f, .selectedcountry.tl-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/timor-leste-flag.svg');
+}
+
+.countrys-Code.tm-f, .selectedcountry.tm-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/turkmenistan-flag.svg');
+}
+
+.countrys-Code.tn-f, .selectedcountry.tn-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/tunisia-flag.svg');
+}
+
+.countrys-Code.to-f, .selectedcountry.to-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/tonga-flag.svg');
+}
+
+.countrys-Code.tr-f, .selectedcountry.tr-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/turkey-flag.svg');
+}
+
+.countrys-Code.tt-f, .selectedcountry.tt-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/trinidad-tobago-flag.svg');
+}
+
+.countrys-Code.tv-f, .selectedcountry.tv-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/tuvalu-flag.svg');
+}
+
+.countrys-Code.tw-f, .selectedcountry.tw-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/taiwan-flag.svg');
+}
+
+.countrys-Code.tz-f, .selectedcountry.tz-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/tanzania-flag.svg');
+}
+
+.countrys-Code.ua-f, .selectedcountry.ua-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/ukraine-flag.svg');
+}
+
+
+
+.countrys-Code.ug-f, .selectedcountry.ug-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/uganda-flag.svg');
+}
+
+.countrys-Code.um-f, .selectedcountry.um-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/us-outlying-islands-flag.svg');
+}
+
+.countrys-Code.vi-f, .selectedcountry.vi-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/virgin-Islands-us-flag.svg');
+}
+
+.countrys-Code.ae-f, .selectedcountry.ae-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/united-arab-emirates-flag.svg');
+}
+
+.countrys-Code.uy-f, .selectedcountry.uy-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/uruguay-flag.svg');
+}
+
+.countrys-Code.uz-f, .selectedcountry.uz-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/uzbekistan-flag.svg');
+}
+
+.countrys-Code.va-f, .selectedcountry.va-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/vatican-city-state-flag.svg');
+}
+
+.countrys-Code.ve-f, .selectedcountry.ve-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/venezuela-flag.svg');
+}
+
+.countrys-Code.vn-f, .selectedcountry.vn-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/vietnam-flag.svg');
+}
+
+.countrys-Code.vu-f, .selectedcountry.vu-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/vanuatu-flag.svg');
+}
+
+.countrys-Code.wf-f, .selectedcountry.wf-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/wallis-futuna-flag.svg');
+}
+
+.countrys-Code.eh-f, .selectedcountry.eh-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/western-sahara-flag.svg');
+}
+
+.countrys-Code.ye-f, .selectedcountry.ye-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/yemen-flag.svg');
+}
+
+.countrys-Code.zm-f, .selectedcountry.zm-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/zambia-flag.svg');
+}
+
+.countrys-Code.zw-f, .selectedcountry.zw-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/zimbabwe-flag.svg');
+}
+
+.countrys-Code.vg-f, .selectedcountry.vg-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/virgin-islands-british-flag.svg');
+}
+
+.countrys-Code.cd-f, .selectedcountry.cd-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/democratic-republic-congo-flag.svg');
+}
+
+.countrys-Code.cg-f, .selectedcountry.cg-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/republic-congo-flag.svg');
+}
+
+.countrys-Code.ga-f, .selectedcountry.ga-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/gabon-flag.svg');
+}
+
+.countrys-Code.gg-f, .selectedcountry.gg-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/guernsey-flag.svg');
+}
+
+.countrys-Code.mk-f, .selectedcountry.mk-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/north-macedonia-flag.svg');
+}
+
+.countrys-Code.mo-f, .selectedcountry.mo-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/macao-flag.svg');
+}
+
+.countrys-Code.fm-f, .selectedcountry.fm-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/federated-states-micronesia-flag.svg');
+}
+
+.countrys-Code.nc-f, .selectedcountry.nc-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/new-caledonia-flag.svg');
+}
+
+.countrys-Code.kn-f, .selectedcountry.kn-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/saint-kitts-nevis-flag.svg');
+}
+
+.countrys-Code.lc-f, .selectedcountry.lc-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/saint-lucia-flag.svg');
+}
+
+.countrys-Code.sh-f, .selectedcountry.sh-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/saint-helena-flag.svg');
+}
+
+.countrys-Code.mf-f, .selectedcountry.mf-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/saint-martin-flag.svg');
+}
+
+.countrys-Code.bl-f, .selectedcountry.bl-f {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/saint-barthélemy.svg');
+}
+
+
+
+.countrys-Code.pm-f, .selectedcountry.pm-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/pierre-miquelon-flag.svg');}
+.countrys-Code.vc-f, .selectedcountry.vc-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/saint-vincent-grenadines-flag.svg');}
+.countrys-Code.bqb-f, .selectedcountry.bqb-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/bonaire-flag.svg');}
+.countrys-Code.bqsa-f, .selectedcountry.bqsa-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/saba-flag.svg');}
+.countrys-Code.bqse-f, .selectedcountry.bqse-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/sint-eustatius-flag.svg');}
+.countrys-Code.cn-f, .selectedcountry.cn-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/china-flag.svg');}
+.countrys-Code.cuc-f, .selectedcountry.cuc-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/cuba-flag.svg');}
+.countrys-Code.gbn-f, .selectedcountry.gbn-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/northern-ireland-flag.svg');}
+.countrys-Code.gbsct-f, .selectedcountry.gbsct-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/scotland-flag.svg');}
+.countrys-Code.gbwls-f, .selectedcountry.gbwls-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/wls-wales-flag.svg');}
+.countrys-Code.iri-f, .selectedcountry.iri-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/iran-flag.svg');}
+.countrys-Code.kpk-f, .selectedcountry.kpk-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/korea-north-flag.svg');}
+.countrys-Code.sds-f, .selectedcountry.sds-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/sudan-flag.svg');}
+.countrys-Code.sys-f, .selectedcountry.sys-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/syria-flag.svg');}
+.countrys-Code.umu-f, .selectedcountry.umu-f {background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/world-flags/united-states-minor-outlying-islands-flag.svg');}
+/*for country code 1 digit*/
+.input-focus-relative.us-f input[type=text], .input-focus-relative.us-f input[type=text].vagaro-input, .input-focus-relative.canada-f input[type=text], .input-focus-relative.canada-f input[type=text].vagaro-input, .input-focus-relative.bv-f input[type=text], .input-focus-relative.bv-f input[type=text].vagaro-input, .input-focus-relative.hm-f input[type=text], .input-focus-relative.hm-f input[type=text].vagaro-input, .input-focus-relative.ru-f input[type=text], .input-focus-relative.ru-f input[type=text].vagaro-input,.input-focus-relative.um-f input[type=text], .input-focus-relative.um-f input[type=text].vagaro-input, .input-focus-relative.umu-f input[type=text], .input-focus-relative.umu-f input[type=text].vagaro-input {
+    padding-left: 30px !important;
+}
+/*for country code 2 digit*/
+.input-focus-relative.uk-f input[type=text], .input-focus-relative.aus-f input[type=text], .input-focus-relative.ar-f input[type=text], .input-focus-relative.be-f input[type=text], .input-focus-relative.be-f input[type=text], .input-focus-relative.at-f input[type=text], .input-focus-relative.in-f input[type=text], .input-focus-relative.br-f input[type=text], .input-focus-relative.cl-f input[type=text], .input-focus-relative.co-f input[type=text], .input-focus-relative.dk-f input[type=text], .input-focus-relative.eg-f input[type=text], .input-focus-relative.fr-f input[type=text], .input-focus-relative.de-f input[type=text], .input-focus-relative.gr-f input[type=text], .input-focus-relative.hu-f input[type=text], .input-focus-relative.id-f input[type=text], .input-focus-relative.id-f input[type=text], .input-focus-relative.it-f input[type=text], .input-focus-relative.jp-f input[type=text], .input-focus-relative.mm-f input[type=text], .input-focus-relative.my-f input[type=text], .input-focus-relative.mx-f input[type=text], .input-focus-relative.no-f input[type=text], .input-focus-relative.nz-f input[type=text], .input-focus-relative.pe-f input[type=text], .input-focus-relative.ph-f input[type=text], .input-focus-relative.pk-f input[type=text], .input-focus-relative.pl-f input[type=text], .input-focus-relative.pn-f input[type=text], .input-focus-relative.ro-f input[type=text], .input-focus-relative.se-f input[type=text], .input-focus-relative.sg-f input[type=text], .input-focus-relative.lk-f input[type=text], .input-focus-relative.es-f input[type=text], .input-focus-relative.za-f input[type=text], .input-focus-relative.kr-f input[type=text], .input-focus-relative.ch-f input[type=text], .input-focus-relative.th-f input[type=text], .input-focus-relative.tr-f input[type=text], .input-focus-relative.ve-f input[type=text], .input-focus-relative.vn-f input[type=text], .input-focus-relative.af-f input[type=text], .input-focus-relative.cuc-f input[type=text], .input-focus-relative.gbsct-f input[type=text], .input-focus-relative.gbwls-f input[type=text], .input-focus-relative.iri-f input[type=text] {
+    padding-left: 40px !important;
+}
+/*for country code 2 digit*/
+.input-focus-relative.uk-f input[type=text].vagaro-input, .input-focus-relative.aus-f input[type=text].vagaro-input, .input-focus-relative.ar-f input[type=text].vagaro-input, .input-focus-relative.be-f input[type=text].vagaro-input, .input-focus-relative.be-f input[type=text].vagaro-input, .input-focus-relative.at-f input[type=text].vagaro-input, .input-focus-relative.in-f input[type=text].vagaro-input, .input-focus-relative.br-f input[type=text].vagaro-input, .input-focus-relative.cl-f input[type=text].vagaro-input, .input-focus-relative.co-f input[type=text].vagaro-input, .input-focus-relative.dk-f input[type=text].vagaro-input, .input-focus-relative.eg-f input[type=text].vagaro-input, .input-focus-relative.fr-f input[type=text].vagaro-input, .input-focus-relative.de-f input[type=text].vagaro-input, .input-focus-relative.gr-f input[type=text].vagaro-input, .input-focus-relative.hu-f input[type=text].vagaro-input, .input-focus-relative.id-f input[type=text].vagaro-input, .input-focus-relative.id-f input[type=text].vagaro-input, .input-focus-relative.it-f input[type=text].vagaro-input, .input-focus-relative.jp-f input[type=text].vagaro-input, .input-focus-relative.mm-f input[type=text].vagaro-input, .input-focus-relative.my-f input[type=text].vagaro-input, .input-focus-relative.mx-f input[type=text].vagaro-input, .input-focus-relative.no-f input[type=text].vagaro-input, .input-focus-relative.nz-f input[type=text].vagaro-input, .input-focus-relative.pe-f input[type=text].vagaro-input, .input-focus-relative.ph-f input[type=text].vagaro-input, .input-focus-relative.pk-f input[type=text].vagaro-input, .input-focus-relative.pl-f input[type=text].vagaro-input, .input-focus-relative.pn-f input[type=text].vagaro-input, .input-focus-relative.ro-f input[type=text].vagaro-input, .input-focus-relative.se-f input[type=text].vagaro-input, .input-focus-relative.sg-f input[type=text].vagaro-input, .input-focus-relative.lk-f input[type=text].vagaro-input, .input-focus-relative.es-f input[type=text].vagaro-input, .input-focus-relative.za-f input[type=text].vagaro-input, .input-focus-relative.kr-f input[type=text].vagaro-input, .input-focus-relative.ch-f input[type=text].vagaro-input, .input-focus-relative.th-f input[type=text].vagaro-input, .input-focus-relative.tr-f input[type=text].vagaro-input, .input-focus-relative.ve-f input[type=text].vagaro-input, .input-focus-relative.vn-f input[type=text].vagaro-input, .input-focus-relative.af-f input[type=text].vagaro-input, .input-focus-relative.cuc-f input[type=text].vagaro-input, .input-focus-relative.gbsct-f input[type=text].vagaro-input, .input-focus-relative.gbwls-f input[type=text].vagaro-input, .input-focus-relative.iri-f input[type=text].vagaro-input {
+    padding-left: 40px !important;
+}
+/*for country code 3 digit*/
+.input-focus-relative input[type=text], .input-focus-relative input[type=text].vagaro-input, .input-focus-relative input[type=text].vagaro-input.cntry-us {
+    padding-left: 50px !important;
+}
+/*for country code 4 digit*/
+.input-focus-relative.ai-f input[type=text], .input-focus-relative.ag-f input[type=text], .input-focus-relative.bs-f input[type=text], .input-focus-relative.bb-f input[type=text], .input-focus-relative.bm-f input[type=text], .input-focus-relative.bm-f input[type=text], .input-focus-relative.vg-f input[type=text], .input-focus-relative.bq-f input[type=text], .input-focus-relative.ky-f input[type=text], .input-focus-relative.dm-f input[type=text], .input-focus-relative.do-f input[type=text], .input-focus-relative.gd-f input[type=text], .input-focus-relative.gu-f input[type=text], .input-focus-relative.jm-f input[type=text], .input-focus-relative.ms-f input[type=text], .input-focus-relative.nf-f input[type=text], .input-focus-relative.mp-f input[type=text], .input-focus-relative.pr-f input[type=text], .input-focus-relative.sj-f input[type=text], .input-focus-relative.kn-f input[type=text], .input-focus-relative.lc-f input[type=text], .input-focus-relative.ta-f input[type=text], .input-focus-relative.tc-f input[type=text], .input-focus-relative.tt-f input[type=text], .input-focus-relative.vi-f input[type=text], .input-focus-relative.bqb-f input[type=text], .input-focus-relative.bqsa-f input[type=text], .input-focus-relative.bqse-f input[type=text], .input-focus-relative.gbn-f input[type=text] {
+    padding-left: 57px !important;
+}
+.input-focus-relative.ai-f input[type=text].vagaro-input, .input-focus-relative.ag-f input[type=text].vagaro-input, .input-focus-relative.bs-f input[type=text].vagaro-input, .input-focus-relative.bb-f input[type=text].vagaro-input, .input-focus-relative.bm-f input[type=text].vagaro-input, .input-focus-relative.bm-f input[type=text].vagaro-input, .input-focus-relative.vg-f input[type=text].vagaro-input, .input-focus-relative.bq-f input[type=text].vagaro-input, .input-focus-relative.ky-f input[type=text].vagaro-input, .input-focus-relative.dm-f input[type=text].vagaro-input, .input-focus-relative.do-f input[type=text].vagaro-input, .input-focus-relative.gd-f input[type=text].vagaro-input, .input-focus-relative.gu-f input[type=text].vagaro-input, .input-focus-relative.jm-f input[type=text].vagaro-input, .input-focus-relative.ms-f input[type=text].vagaro-input, .input-focus-relative.nf-f input[type=text].vagaro-input, .input-focus-relative.mp-f input[type=text].vagaro-input, .input-focus-relative.pr-f input[type=text].vagaro-input, .input-focus-relative.sj-f input[type=text].vagaro-input, .input-focus-relative.kn-f input[type=text].vagaro-input, .input-focus-relative.lc-f input[type=text].vagaro-input, .input-focus-relative.ta-f input[type=text].vagaro-input, .input-focus-relative.tc-f input[type=text].vagaro-input, .input-focus-relative.tt-f input[type=text].vagaro-input, .input-focus-relative.vi-f input[type=text].vagaro-input, .input-focus-relative.bqb-f input[type=text].vagaro-input, .input-focus-relative.bqsa-f input[type=text].vagaro-input, .input-focus-relative.bqse-f input[type=text].vagaro-input, .input-focus-relative.gbn-f input[type=text].vagaro-input, .input-focus-relative.nl-f input[type=text].vagaro-input {
+    padding-left: 57px !important;
+}
+/*for country code 5 digit*/
+.input-focus-relative.cw-f input[type=text], .input-focus-relative.cw-f input[type=text].vagaro-input {
+    padding-left: 67px !important;
+}
+/*for country code 6 digit*/
+.input-focus-relative.im-f input[type=text], .input-focus-relative.im-f input[type=text].vagaro-input, .input-focus-relative.je-f input[type=text], .input-focus-relative.je-f input[type=text].vagaro-input, .input-focus-relative.gg-f input[type=text], .input-focus-relative.gg-f input[type=text].vagaro-input {
+    padding-left: 74px !important;
+}
+/*for country code 7 digit*/
+.input-focus-relative.cx-f input[type=text], .input-focus-relative.cx-f input[type=text].vagaro-input, .input-focus-relative.cc-f input[type=text], .input-focus-relative.cc-f input[type=text].vagaro-input {
+    padding-left: 80px !important;
+}
+.all-country-flag-react{
+    background: var(--bkg_neutral_default);
+    box-shadow: 1px 1px 25px 0 rgba(109, 110, 111, 0.16);
+    border: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    min-width: auto;
+    z-index: 9999;
+
+    .select2-search {
+        border-bottom: solid var(--border_neutral_default) 1px;
+        display: block;
+        padding: var(--spacing_8);
+        position: relative;
+        width: 328px;
+        min-height: 26px;
+        margin: 0;
+        z-index: 9999;
+        white-space: nowrap;
+        background-color: var(--bkg_neutral_default);
+
+        @media(max-width:767px){
+            position: fixed;
+            width: var(--sizing-full);
+            top: var(--spacing_0);
+            left: var(--spacing_0);
+        }
+
+        input{
+            width: var(--sizing-full);
+            height: var(--sizing_40);
+            border: var(--border_style_solid) var(--border_neutral_strong) var(--border_width_default);
+            border-radius: var(--radius_small);
+            padding: var(--spacing_8) var(--spacing_8) var(--spacing_8) 29px;
+            box-sizing: border-box;
+            font-family: var(--font_family_proximanova);
+            -webkit-appearance: none;
+            font-size: var(--font_size_15);
+            color: var(--text_neutral_default);
+            background-color: var(--bkg_neutral_default);
+
+            @media(max-width:767px){
+                border-radius: var(--radius_large);
+            }
+
+            &:focus{
+                outline: 0;
+            }
+        }
+
+        &:after {
+            color: var(--icon_neutral_default);
+            top: 20px;
+            content: "\f002";
+            font-family: "Font Awesome 6 Pro";
+            font-size: var(--font_size_15);
+            font-weight: var(--font_weight_bold);
+            height: 17px;
+            left: 19px;
+            line-height: 17px;
+            position: absolute;
+        } 
+    }
+
+    .vg-country-dropdown-search__menu{
+        border-radius: 0;
+        margin-top: var(--spacing_0) !important;
+        margin-bottom: var(--spacing_0);
+        box-shadow: 1px 1px 25px 0 rgba(109, 110, 111, 0.16);
+
+        @media(max-width:767px){
+            top: 57px !important;
+        }
+        .vg-country-dropdown-search__menu-list{
+            padding-bottom: var(--spacing_0);
+            max-height: var(--sizing_200);
+
+            @media(max-width:767px)
+            {
+                max-height: var(--sizing-full);
+            }
+
+            .vg-country-dropdown-search__group-heading{
+                margin-bottom: var(--spacing_0);
+            }
+        }
+
+    }
+}
+

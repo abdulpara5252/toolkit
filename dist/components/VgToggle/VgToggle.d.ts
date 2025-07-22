@@ -1,0 +1,30 @@
+import React from "react";
+import "./VgToggle.scss";
+import "../VgTextbox/VgTextbox.scss";
+export interface VgToggleProps {
+    ToggleVariation?: "Default" | "WithDescription" | "Expanded" | "InputToggle";
+    Title?: string;
+    ToggleId?: string;
+    ExpandedText?: string;
+    Disable?: boolean;
+    ToggleOn?: boolean;
+    Description?: string;
+    CopyHorizontal?: boolean;
+    ToogleRight?: boolean;
+    SetValue?: boolean | string;
+    CopyVertical?: boolean;
+    SetToggleOption?: string;
+    CustomButtonText?: string;
+    OnChange?: (checked: boolean) => void;
+    CustomButtonTextOnClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
+    OnClick?: (e: React.MouseEvent<HTMLInputElement> | string) => void;
+    VerticalOnClick?: (e: React.MouseEvent<HTMLInputElement> | string) => void;
+    HorizontalOnClick?: (e: React.MouseEvent<HTMLInputElement> | string) => void;
+    Name?: string;
+    BeakPosition?: 'Left' | 'Middle' | 'Right';
+    InfoTooltipMessage?: string;
+    OnBlur?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    [key: string]: any;
+}
+declare const VgToggle: React.FC<VgToggleProps>;
+export default VgToggle;

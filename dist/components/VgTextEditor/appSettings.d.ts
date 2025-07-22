@@ -1,0 +1,23 @@
+export declare const isDevPlayground: boolean;
+export declare const DEFAULT_SETTINGS: {
+    readonly disableBeforeInput: false;
+    readonly emptyEditor: boolean;
+    readonly hasLinkAttributes: false;
+    readonly isAutocomplete: false;
+    readonly isCharLimit: false;
+    readonly isCharLimitUtf8: false;
+    readonly isCollab: false;
+    readonly isMaxLength: false;
+    readonly isRichText: true;
+    readonly measureTypingPerf: false;
+    readonly shouldPreserveNewLinesInMarkdown: false;
+    readonly shouldUseLexicalContextMenu: false;
+    readonly showNestedEditorTreeView: false;
+    readonly showTableOfContents: false;
+    readonly showTreeView: true;
+    readonly tableCellBackgroundColor: true;
+    readonly tableCellMerge: true;
+};
+export declare const INITIAL_SETTINGS: Record<SettingName, boolean>;
+export type SettingName = keyof typeof DEFAULT_SETTINGS;
+export type Settings = typeof INITIAL_SETTINGS;

@@ -1,0 +1,95 @@
+.vg-banner-success-master, 
+.vg-banner-fail-master, 
+.vg-banner-warning-master {
+    position: fixed;
+    left: var(--spacing_0);
+    top: 100px;
+    right: var(--spacing_0);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 3px var(--spacing_10);
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: var(--bkg_green_default);
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+    font-size: var(--font_size_15);
+    font-weight: var(--font_weight_medium);
+    color: var(--text_neutral_ondark);
+    min-height: var(--spacing_40);
+    z-index: 999999;
+    -webkit-transform: translateX(0) translateY(-100px);
+    -moz-transform: translateX(0) translateY(-100px);
+    -ms-transform: translateX(0) translateY(-100px);
+    -o-transform: translateX(0) translateY(-100px);
+    transform: translateX(0) translateY(-100px);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    opacity: 0;
+    visibility: hidden;
+
+    .icon-banner {
+        font-size: var(--font_size_24);
+        margin-right: var(--spacing_10);
+        line-height: 34px;
+    }
+
+    &.showmsgTop {
+        -webkit-transform: translateX(0) translateY(-50px);
+        -moz-transform: translateX(0) translateY(-50px);
+        -ms-transform: translateX(0) translateY(-50px);
+        -o-transform: translateX(0) translateY(-50px);
+        transform: translateX(0) translateY(-50px);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.vg-banner-success-master {
+    background-color: var(--bkg_green_default);
+}
+.vg-banner-success-master .icon-banner::before{
+  content: "\f00c";
+  font-family: "Font Awesome 6 Pro";
+  font-weight: var(--font_weight_bold);
+}
+
+.vg-banner-fail-master {
+    background-color: var(--bkg_alert_default);
+}
+.vg-banner-fail-master .icon-banner::before{
+    content: "\f00d";
+    font-family: "Font Awesome 6 Pro";
+    font-weight: var(--font_weight_bold);
+}
+
+.vg-banner-warning-master {
+    background-color: var(--bkg_warning_default);
+}
+.vg-banner-warning-master .icon-banner::before{
+    content: "\f071";
+    font-family: "Font Awesome 6 Pro";
+    font-weight: var(--font_weight_bold);
+}
+
+.passinvmessageblock {
+    min-width: var(--sizing-full);
+    height: auto;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+@media(max-width:767px){
+    .passinvmessageblock {
+        width: var(--sizing_auto);
+        height: var(--sizing_auto);
+    }
+}

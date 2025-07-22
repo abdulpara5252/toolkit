@@ -1,0 +1,38 @@
+import React from "react";
+import "../VgDatePicker/VgDatePicker.scss";
+import "../VgTextbox/VgTextbox.scss";
+import "./VgDateRangePicker.scss";
+export interface VgDateRangePickerProps {
+    Title?: string;
+    DefaultStartDate?: Date | "today" | "firstDateOfMonth" | null | "none";
+    DefaultEndDate?: Date | "endDateOfMonth" | null | "none";
+    MinDate?: Date | null;
+    MaxDate?: Date | null;
+    Placeholder?: string;
+    DateFormat?: string;
+    Disabled?: boolean;
+    DisabledDates?: Date[];
+    Required?: boolean;
+    OnChange?: (event: any, startDate: Date | null, endDate: Date | null, Type: string | null | number) => void;
+    OnBlur?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    OnClick?: (e: React.MouseEvent<HTMLInputElement>, lastDate: Date | null, date: Date | null, value: string | null) => void;
+    [key: string]: any;
+    DateRangeName: string;
+    DateRangePickerId?: string | number;
+    ButtonPrimary?: string;
+    ButtonSecondary?: string;
+    ButtonThird?: string;
+    EmptyInputValue?: boolean;
+    VagaroToolkit?: Number;
+    DefaultOption?: "Today" | "Yesterday" | "Last 7 Days" | "Last 30 Days" | "This Month" | "Last Month" | "This Year" | "Last Year" | "none";
+    ShowRequiredFieldMark?: boolean;
+    StartDateInputName?: string;
+    EndDateInputName?: string;
+    AutoFocus?: boolean;
+    DateRangePickerPosition?: string;
+    SetControlonRight?: boolean;
+    ClearButtonCallback?: boolean;
+    SetValue?: string;
+}
+declare const VgDateRangePicker: React.FC<VgDateRangePickerProps>;
+export default VgDateRangePicker;

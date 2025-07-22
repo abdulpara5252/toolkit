@@ -1,0 +1,78 @@
+.vg-modal-dialog.vg-modalsummary.vg-addresspopup-control-popup{
+    .vg-modal-content{
+        overflow: visible;
+    }
+    .vg-modal-body{
+        overflow-y:visible ;
+        
+        @media(max-width:767px){
+            overflow-y: auto;
+        }
+    }
+    .vg-addresspopup-text{
+        margin-bottom:var(--spacing_16);
+        color: var(--text_neutral_secondary);
+    }
+    .vg-addresspopup-fields{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: var(--spacing_16);
+
+        @media(max-width:767px){
+            flex-direction: column;
+            margin-top: var(--spacing_0);
+        }
+
+        .vg-addresspopup-field{
+
+            @media(max-width:767px){
+                width: var(--sizing-full);
+                margin-top: var(--spacing_16);
+                
+            }
+
+            &.vg-addresspopup-paddingright{
+                padding-right: 15px;
+            }
+            
+        }
+    }
+    .vg-addresspopup-state-dropdown{
+        display: block;
+        color: var(--text_neutral_default) ;
+        border-color: var(--border_neutral_strong);
+        background-color: var(--bkg_neutral_default);
+        border-radius: var(--radius_small);
+        height: var(--spacing_40);
+        min-width: 170px;
+        width: var(--sizing-full);
+        cursor: pointer;
+        @media(max-width:767px){
+           height: var(--sizing_48);
+            
+        }
+
+        &:focus{
+            outline: 0;
+            border: var(--border_width_default) var(--border_style_solid) var(--border_blue_default);
+            box-shadow: none;
+        }
+    }
+    .vg-input-control-error-msg {
+        font-weight: var(--font_weight_regular);
+        font-size: var(--font_size_12);
+        line-height: var(--font_height_16);
+        color: var(--text_alert_default);
+        text-align: var(--font_align_right);
+        display: block;
+        margin-top: var(--spacing_4);
+        box-sizing: border-box;
+    }
+    .vg-input-control-error, .vg-input-control-error:focus {
+        border-color: var(--border_alert_default) !important;
+        background-color: var(--bkg_alert_weak);
+        box-sizing: border-box;
+        box-shadow: none !important;
+    }
+}

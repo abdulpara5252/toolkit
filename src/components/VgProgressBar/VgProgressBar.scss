@@ -1,0 +1,216 @@
+.vg-progress-bar-header-body {
+  font-size: 14px;
+  color: var(--text_neutral_default);
+  font-weight: 400;
+}
+
+.vg-progress-hr-bar-body-array {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text_neutral_default);
+  font-weight: 400;
+  &.top {
+    margin-bottom: 8px;
+  }
+
+  &.bottom {
+    margin-top: 8px;
+  }
+
+  .vg-progress-bar-body-inline {
+    text-align: center;
+    white-space: nowrap;
+    &:first-child{
+      text-align: left;
+    }
+    &:last-child{
+      text-align: right;
+    }
+  }
+}
+
+.vg-progress-bar-vertical-inline {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+}
+
+.vg-progress-bar-wrapper {
+  position: relative;
+
+  &.horizontal {
+    width: 100%;
+    height: 8px;
+    background-color: var(--bkg_neutral_secondary);
+    border: 1px solid var(--border_neutral_default);
+    border-radius: 10px;
+
+    &.points {
+      height: auto;
+      background: none;
+      border: none;
+
+      .vg-progress-bar-track {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: var(--bkg_neutral_tiertiary);
+        transform: translateY(-50%);
+      }
+
+      .vg-progress-bar-fill-line {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 4px;
+        background-color: var(--bkg_green_default);
+        transform: translateY(-50%);
+        transition: width 0.3s ease;
+      }
+
+      .vg-progress-points {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        .vg-progress-point {
+          width: 12px;
+          height: 12px;
+          border-radius: 10px;
+          background-color: #ccc;
+          z-index: 2;
+
+          &.filled {
+            background-color: var(--bkg_green_default);
+          }
+        }
+      }
+    }
+
+    .vg-progress-bar-fill {
+      height: 100%;
+      background-color: var(--bkg_green_default);
+      transition: width 0.3s ease;
+      border-radius: 4px;
+    }
+  }
+
+  &.vertical {
+    width: 8px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    display: flex;
+
+    &.points {
+      width: 100%;
+      background: none;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+
+      .vg-progress-bar-fill-line {
+        position: absolute;
+        width: 4px;
+        top: 0;
+        left: 0;
+        transition: height 0.3s ease;
+        z-index: 9;
+      }
+
+      .vg-progress-points {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        left: -4px;
+        .vg-progress-point {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          gap: 7px;
+          z-index: 2;
+          position: relative;
+          padding-left: 30px;
+          .vg-progress-dots{
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--border_neutral_strong);
+            position: absolute;
+            left: 0;
+            top: 6px;
+            z-index: 9;
+          }
+          &::before {
+            content: "";
+            width: 4px;
+            height: 100%;
+            background-color: var(--border_neutral_strong);
+            position: absolute;
+            left: 4px;
+            top: 6px;
+            transition: height 0.3s ease;
+          }
+          &:after{
+            content: "";
+            width: 4px;
+            height: 0%;
+            background-color: var(--border_neutral_strong);
+            position: absolute;
+            left: 4px;
+            top: 6px;
+            transition: height 0.3s ease-in-out;
+          }
+
+             
+          &:last-child{
+            &:after{
+              content: none;
+            }
+          }
+
+          &.filled{
+            &:has(+ .filled){
+              &::after{
+                background-color: var(--bkg_green_default);
+                height: 100%;
+              }
+            }
+            .vg-progress-dots{
+              animation: vgprogressdots 1s forwards;
+              animation-delay: 0.35s;
+            }
+          }
+          
+          &:last-child{
+            &::after{
+              background-color: transparent;
+            }
+            &::before{
+              background-color: transparent;
+            }
+          }
+
+          .vg-progress-bar-body-inline {
+            font-size: 14px;
+            white-space: nowrap;
+            color: var(--text_neutral_default);
+          }
+        }
+      }
+    }
+  }
+}
+
+ @keyframes vgprogressdots {
+    to {
+      background-color: var(--bkg_green_default);
+    }
+  }

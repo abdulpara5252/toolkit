@@ -1,0 +1,241 @@
+* {
+    font-family: "proxima-nova", sans-serif;
+    box-sizing: border-box;
+    /* scrollbar-color: rgba(2, 2, 2, 0.5) #f6f4f3;
+    scrollbar-width: thin;
+    scroll-behavior: smooth; */
+}
+::-webkit-scrollbar {
+    background-color: var(--bkg_neutral_tiertiary);
+    border-radius: var(--radius_large);
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--bkg_components_selector_disabled);
+    border-radius: var(--radius_large);
+    position: relative;
+    z-index: 999;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: var(--radius_large);
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/*Storybook related changes
+All Id is default according to component and this change is not going on build.
+this is only storybook related changes. 
+*/
+#anchor--date-picker--default .innerZoomElementWrapper{
+    height: 350px;
+}
+
+#anchor--date-picker--default #story--date-picker--default--primary-inner,
+#story--date-picker--disabled-inner .vg-date-container,
+#story--date-picker--error-validation-inner .vg-date-container,
+#story--date-picker--focus-inner .vg-date-container,
+#anchor--date-picker--default .vg-date-container,
+#storybook-root .vg-date-container,
+#storybook-root .vg-customer-dropdown {
+    width: 320px;
+}
+#anchor--table-grid--table-grid .sbdocs-preview{
+    width: 1200px;
+}
+.sbdocs-content:has(#anchor--table-grid--table-grid) {
+    max-width: 1200px;
+}
+.sbdocs-content:has([data-lexical-text="true"]) {
+	color: var(--text_neutral_default);
+}
+#storybook-root .vg-textarea-group {
+    max-width: 320px;
+}
+#anchor--date-range-picker--date-range-picker  .innerZoomElementWrapper{
+    height: 600px;
+}
+#anchor--phone-number--default .innerZoomElementWrapper{
+    height: 350px;
+} 
+#anchor--popup--popup .innerZoomElementWrapper{
+    height: 350px;
+}
+#anchor--time-picker--default .innerZoomElementWrapper{
+    height: 250px;
+}
+#anchor--address-control--address-control .innerZoomElementWrapper{
+    height: 350px;
+}
+
+#anchor--switch--input-toggle .vg-group {
+    height: 170px;
+}
+
+#anchor--date-range-picker--date-range-picker .docs-story {
+    padding: 10px;
+}
+
+#anchor--date-range-picker--date-range-picker .docs-story .vg-daterangepicker-group {
+    padding: 20px;
+}
+
+#story--dropdown--default--primary,
+#story--dropdown--default,
+#story--dropdown--disabled,
+#story--dropdown--error-validation,
+#story--dropdown--focus-border,
+#storybook-root .vg-react-select2-dropdown,
+#story--nested-dropdown--default--primary,
+#story--nested-dropdown--default,
+#story--nested-dropdown--with-multi-location,
+#storybook-root .vg-nested-dropdown-wapper,
+#story--customer-dropdown--default--primary .vg-customer-dropdown{
+    width: 320px;
+}
+#story--map-control--default--primary-inner > div{
+    width: 485.09px;
+    height: 500px;
+}
+#storybook-root .vg-map-width{
+    width: 485.09px;
+    height: 500px;
+}
+@media (min-width:767px){
+    #story--time-picker--default--primary .vg-time-picker,
+    #story--time-picker--default .vg-time-picker,
+    #story--time-picker--error-validation .vg-time-picker,
+    #story--time-picker--disabled .vg-time-picker,
+    #story--time-picker--focus .vg-time-picker,
+    #storybook-root .vg-time-picker {
+        width: 320px;
+    }
+    #storybook-root .vg-reacttk-country-dropdown-wrap .vg-country-flag-dropdown, #story--address-control--address-control--primary .vg-country-flag-dropdown {
+        width: 420px;
+    }
+    #story--input--default--primary .vg-input-control-group,
+    #story--input--default .vg-input-control-group,
+    #story--input--password .vg-input-control-group,
+    #story--input--error-validation .vg-input-control-group,
+    #story--input--disabled .vg-input-control-group,
+    #story--input--focus-border .vg-input-control-group,
+    #storybook-root .vg-input-control-group {
+        width: 320px;
+    }
+    #storybook-root .scrollable-table-container .vg-input-control-group, #storybook-root .scrollable-table-container .vg-react-select2-dropdown {
+        width: 80px;
+    }
+    #storybook-root .scrollable-table-container .vg-input-control-group{margin-bottom: 0px;}
+    #storybook-root .scrollable-add-hourlyPayRate .vg-input-control-group   {
+        width: auto;
+    }
+}
+
+@media (min-width:767px){
+    #story--time-picker--default--primary .vg-time-picker,
+    #story--time-picker--default .vg-time-picker,
+    #story--time-picker--error-validation .vg-time-picker,
+    #story--time-picker--disabled .vg-time-picker,
+    #story--time-picker--focus .vg-time-picker,
+    #storybook-root .vg-time-picker {
+        width: 100%;
+    }
+}
+
+@media(max-width:767px){
+    .sb-show-main.sb-main-centered{
+        align-items: flex-start;
+    }
+    .vg-tooltip-group{
+        margin-top: 50%;
+    }
+
+    #story--dropdown--default--primary,
+    #story--dropdown--default,
+    #story--dropdown--disabled,
+    #story--dropdown--error-validation,
+    #story--dropdown--focus-border,
+    #storybook-root .vg-react-select2-dropdown,
+    #story--nested-dropdown--default--primary,
+    #story--nested-dropdown--default,
+    #story--nested-dropdown--with-multi-location,
+    #storybook-root .vg-nested-dropdown-wapper{
+        width: 100%;
+    }
+
+    #storybook-root .vg-ai-button-wrap {
+        float: right;
+    }
+
+    #storybook-root {
+        min-width: 320px;
+    }
+}
+
+#anchor--color-picker--default .docs-story > div:first-of-type{
+    height: 450px;
+}
+#anchor--input--default .docs-story > div:first-of-type{
+    height: 200px;
+}
+#anchor--color-picker--default .docs-story .vg-group {
+    margin: 20px;
+}
+#storybook-root .addresstextfileWrap {
+    width: 700px;
+}
+@media(max-width:767px){
+    #storybook-root .addresstextfileWrap {
+        width: 100%;
+    }
+    #storybook-root .vg-map-width {
+        width: 100%;
+    }
+}
+#story--graph--donut-chart--primary:has(.show-graph-tab), #storybook-root .show-graph-tab{
+    min-width: 855px;
+}
+
+
+/*Tailwind related change - Ovelaping Tailwind default css*/
+.docblock-argstable [type='checkbox']:checked{
+    background: none;
+}
+.docblock-argstable [type='radio']:focus {
+    box-shadow: none;
+}
+
+#storybook-root {
+    max-width: 100%;
+}
+#story--carousel--default--primary-inner .product-carousel {
+    max-width: 600px;
+}
+#anchor--stepper--default .vg-stepper-control {
+    width: 161px;
+}
+div#story--customer-dropdown--default--primary-inner{
+    height: 350px;
+    display: flex;
+    padding: 30px;
+    width: 100%;
+}
+div#story--customer-dropdown--default--primary-inner .w-full{
+    width: 100%;
+}
+#storybook-root .vg-btn-DropdownMenu-wrap .vg-tk-btn.vg-btn-DropdownMenu{
+    min-width: 280px;
+}
+#storybook-docs .vg-btn-DropdownMenu-wrap .vg-tk-btn.vg-btn-DropdownMenu{
+    min-width: 280px;
+}
+#storybook-root .vg-search-dropdown-input-wrapper .vg-search-dropdown-input,
+#story--search-dropdown--grouped-options--primary .vg-search-dropdown-input-wrapper .vg-search-dropdown-input
+{
+    min-width: 320px;
+}

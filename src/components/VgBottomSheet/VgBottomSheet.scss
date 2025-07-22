@@ -1,0 +1,169 @@
+body.bottom-sheet-open {
+    overflow: hidden;
+}
+
+.vg-bottom-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius_large) var(--radius_large) 0 0;
+    transform: translateY(100%);
+    z-index: 999;
+    transition: transform 0.8s ease-in-out;
+
+    &.visible {
+        transform: translateY(0);
+    }
+
+    &.modal-overlay {
+        z-index: 999;
+        background: transparent;
+    }
+
+    &.bottomsheet-hide,
+    &.bottomsheet-hide .vg-modal-dialog .vg-modal-content {
+        box-shadow: none;
+    }
+
+    .vg-modal-dialog {
+        align-items: flex-end;
+        display: flex;
+        justify-content: flex-end;
+        margin: var(--spacing_0);
+        min-height: var(--sizing-full);
+        min-width: var(--sizing-full);
+        padding: var(--spacing_0);
+        position: static; 
+        transform: none;       
+
+        .vg-modal-content {
+            background-color: var(--bkg_neutral_default);
+            border-radius: var(--radius_large) var(--radius_large) 0 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: var(--sizing-full);
+
+            .vg-modal-body {
+                padding: var(--spacing_16);
+            }
+
+            .vg-modal-footer {
+                &.no-modal-body {
+                    justify-content: flex-start;
+                    border-top: none;
+                    border-radius: var(--radius_large) var(--radius_large) 0 0;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 767px) {
+        &, .bottom-sheet-overlay {
+            display: none;
+        }
+    }
+
+    .bottomsheet-menu {
+        background-color: var(--bkg_neutral_default);
+        border-radius: var(--radius_large) var(--radius_large) 0 0;
+        padding: 16px 0 0;
+        
+        .dropdown-item {
+            border-bottom: 1px solid var(--border_neutral_default);
+            color: var(--text_neutral_default);
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 24px;
+            padding: 12px 16px;
+            display: block;
+            cursor: pointer;
+
+            &.delete {
+                color: var(--text_alert_default);
+            }
+        }
+    }    
+}
+
+.vg-bottomsheet-dot {
+    float: right;
+}
+
+.bottom-sheet-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: var(--spacing_10) var(--spacing_20);
+    background-color: #007bff;
+    color: var(--text_neutral_ondark);
+    border: var(--border_style_none);
+    border-radius: var(--radius_medium);
+    cursor: pointer;
+}
+
+.bottom-sheet-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sizing-full);
+    height: var(--sizing-full);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+
+    @media only screen and (min-width: 767px) {
+        display: none !important;
+    }
+}
+
+
+.bottomsheet-dummycontent {
+    padding: 30px;
+    background: rgba(123, 97, 255, 0.08);
+    border: var(--border_width_default) var(--border_style_dashed) rgba(123, 97, 255, 0.75);
+    text-align: var(--font_align_center);
+    border-radius: 8px;
+
+    p {
+        margin: var(--spacing_0);
+        font-size: 14px;
+        color: var(--text_blue_default);
+        line-height: 1.5;
+    }
+}
+
+.link-plus-svg {
+    width: var(--sizing_16);
+    height: var(--sizing_16);
+    margin-right: var(--spacing_16);
+    margin-top: var(--spacing_0);
+
+}
+.link-plus-svg svg {
+    width: var(--sizing_16);
+    height: var(--sizing_16);
+    margin-right: var(--spacing_4);
+    color: var(--text_neutral_default);
+}
+.vg-modal-dialog-bottom{
+    padding: var(--spacing_16);
+}
+.vg-modal-header-bottom{
+    font-weight: var(--font_weight_medium);
+    font-size: var(--font_size_20);
+    line-height: var(--font_height_24);
+    color: var(--text_neutral_default);
+    margin-bottom:var(--spacing_8);
+}
+.vg-modal-body-bottom{
+    font-size: var(--font_size_16);
+    line-height: var(--font_height_20);
+    color: var(--text_neutral_default);
+    font-weight: var(--font_weight_regular);
+
+    p{
+        text-align: var(--font_align_left);
+        margin: var(--spacing_0);
+    }
+}
+

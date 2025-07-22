@@ -1,0 +1,19 @@
+// @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.draglist_wrapper{
+    &.save{
+        .draglist{
+            .vg-form-check{
+                padding-left: 0;
+                .vg-check-label{
+                    margin-left: 0;
+                    &::before, &::after{
+                        content: none;
+                    }
+                }
+            }
+        }
+    }
+}

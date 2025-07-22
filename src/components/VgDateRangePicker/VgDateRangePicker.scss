@@ -1,0 +1,289 @@
+.vg-daterangepicker {
+    width: var(--sizing-full);
+    position: relative;
+
+    .vg-input-control {
+        padding-right: 30px;
+        cursor: pointer;    
+    }
+
+    svg {
+        width: var(--sizing_16);
+        height: var(--sizing_16);
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--icon_neutral_secondary);
+    }
+}
+
+.vg-daterangepicker-group {
+    .vg-input-container {
+        flex-direction: row;
+    }
+}
+
+.vg-daterangepicker-dropdown {
+    width: 823px;
+    border-radius: var(--radius_medium);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: var(--bkg_neutral_default);
+    position: relative;
+    z-index: 9999;
+    @media (min-width:768px) and (max-width:1100px){
+        width: 700px;
+    }
+    .vg-daterangepicker-calenders {
+        padding: var(--spacing_20);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        @media (min-width:768px) and (max-width:1100px){
+            padding: var(--spacing_12);
+        }
+            .vg-daterangepicker-cale-wrapper {
+                width: calc(100% - 133px);
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+        
+                .vg-daterangepicker-cale-left,
+                .vg-daterangepicker-cale-right {
+                    width: calc(50% - 8px);
+                }
+        
+                .vg-daterangepicker-cale-input {
+                    width: var(--sizing-full);
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: 16px;
+                    margin-top: var(--spacing_16);
+        
+                    .vg-input-control-group {
+                        width: var(--sizing-full);
+                        justify-content: space-between;
+                        margin-bottom: var(--spacing_0);
+        
+                        .vg-input-container {
+                            width: var(--sizing-full);
+                        }
+                    }
+        
+                    .vg-input-control {
+                        min-width: var(--spacing_auto);
+                        width: var(--sizing-full);
+        
+                    }
+                }
+        
+                .vg-reacttk-calendar {
+                    border: var(--border_width_default) var(--border_style_solid) var(--border_neutral_strong);
+                    border-radius: var(--radius_medium);
+                    position: static;
+                    box-shadow: none;
+                    background-color: transparent;
+                    margin: var(--spacing_0);
+                    padding: var(--spacing_24) var(--spacing_24) var(--spacing_20);
+                    min-width: var(--sizing_auto);
+                    @media (min-width:768px) and (max-width:1100px){
+                        padding: var(--spacing_16) var(--spacing_16) var(--spacing_10);
+                    }
+                }
+            }
+
+        .vg-daterangepicker-range {
+            width: 117px;
+        }
+    }
+
+    .vg-daterangepicker-range {
+        ul {
+            margin: var(--spacing_0);
+            padding: var(--spacing_0);
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            height: var(--sizing-full);
+
+            li {
+                line-height: var(--font_height_36);
+                text-align: var(--font_align_center);
+                font-size: var(--font_size_15);
+                font-weight: var(--font_weight_regular);
+                color: var(--text_neutral_default);
+                border-radius: var(--radius_full);
+                background-color: var(--bkg_neutral_secondary);
+                margin-bottom: 9px;
+                cursor: pointer;
+
+                &:hover,
+                &.active {
+                    background-color: var(--ButtonBackColor);
+                    color: var(--text_neutral_ondark);
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .vg-daterangepicker-action {
+        border-top: var(--border_width_default) var(--border_style_solid) var(--border_neutral_default);
+        background-color: var(--bkg_neutral_secondary);
+        padding: var(--spacing_8) var(--spacing_16);
+        display: flex;
+        justify-content: flex-end;
+
+        .vg-tk-btn {
+            margin-left: var(--spacing_16);
+
+            &:first-child {
+                margin-left: var(--spacing_0);
+            } 
+        }
+    }
+}
+
+.vg-reacttk-calendar {
+    .calendar-dates-grid {
+        .date {
+            span {
+                position: relative;
+                    z-index: 9;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                inset-inline-start: 0;
+                inset-inline-end: 0;
+                z-index: 9;
+                height: 32px;
+            }
+        }
+        
+        .date.start-date {
+            &.selected {
+                span {
+                    background-color: transparent;
+                    color: var(--text_neutral_ondark);
+                }
+
+                &:before {
+                    background-color: var(--ButtonBackColor);
+                    border-radius: 9999px 0 0 9999px;
+                }
+            }
+        }        
+
+        .date.end-date {
+            &.selected {
+                span {
+                    background-color: transparent;
+                    color: var(--text_neutral_ondark);
+                }
+    
+                &:before {
+                    background-color:var(--ButtonBackColor);
+                    border-radius: 0 9999px 9999px 0;
+                }
+            }            
+        }
+        
+        .date.start-date.end-date {
+            span {
+                border-radius: 9999px;
+            }
+            
+            &:before {
+                display: none;
+            }
+        }
+
+        .date {
+            &.in-range {
+                span {
+                    color: var(--text_neutral_default);
+                    border-radius: 0;
+                }
+
+                &:before {
+                    background-color: var(--bkg_neutral_tiertiary);
+                }
+
+                &:hover {
+                    span {
+                        border: var(--border_width_default) var(--border_style_solid) transparent;
+                    }                    
+                }
+
+                &.highlighted {
+                    span {
+                        color: var(--text_neutral_ondark);
+                    }
+                }
+            }
+        }
+    }
+}
+.required-input-mark{
+    color: var(--text_alert_default);
+}
+@media (max-width:767px){
+	.vg-daterangepicker-native-pro {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 44px;
+        .vg-input-label {
+            margin-bottom: var(--spacing_0);
+            width: 35%;
+            font-size: var(--font_size_16);
+        }
+
+        .vg-input-container {
+            width: 65%;
+            position: relative;
+            .vg-input-control {
+                border: none;
+                height: auto;
+                min-height: 43px;                
+                padding: var(--spacing_0);
+                width: var(--sizing-full);
+                text-align: var(--font_align_right);
+                font-size: var(--font_size_16);
+                appearance: none;
+                padding: var(--spacing_12) var(--spacing_16) var(--spacing_12) var(--spacing_4);            
+                &:focus {
+                    border: none !important;
+                }
+            }
+            svg{
+                display: none !important;
+            }
+            &:after{
+                content: "\f105";
+                font-family: "Font Awesome 6 Pro";
+                font-size: 18px;
+                font-weight: var(--font_weight_semibold);
+                position: absolute;
+                right: var(--spacing_0);
+                transform: rotate(0deg);
+                border-style: none;
+                border-color: initial;
+                border-image: initial;
+                display: inline-block;
+                margin-left: var(--spacing_0);
+                vertical-align: 0.34em;
+                color: var(--text_neutral_default);
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}

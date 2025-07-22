@@ -1,0 +1,19 @@
+@tailwind components;
+@tailwind utilities;
+
+.vg-information-note {
+  &--information {
+    color: var(--text_blue_default);
+    background-color:var(--bkg_blue_weak);
+  }
+
+  &--warning {
+    color: #AA7701;
+    background-color: #FFE3B5;
+  }
+
+  &--error {
+    color: var(--text_alert_default);
+    background-color: var(--bkg_alert_weak);
+  }
+} 

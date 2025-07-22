@@ -1,0 +1,17 @@
+emoji-picker{
+    --num-columns: 5;
+    --emoji-size: 1.35rem;
+    --category-emoji-size: 1.15rem;
+    --category-emoji-padding: 0.15rem;
+    --emoji-padding: 0.25rem;
+    width: calc(var(--emoji-size, 32px)* 11);
+    height: calc(var(--emoji-size, 32px)* 10);
+    overflow-y: auto;
+    border-radius: var(--radius_small);
+    --border-color: var(--border_neutral_strong);
+}
+
+/* Apply scrollbar color only in dark theme */
+[data-theme="dark"] emoji-picker {
+    scrollbar-color: var(--bkg_components_calendar_hoursnoworking) var(--bkg_theme_midnight_default);
+}

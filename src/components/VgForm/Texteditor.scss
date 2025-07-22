@@ -1,0 +1,99 @@
+@import "../../common/vg-theme-token.css";
+@import "../../common/vg-typography-token.css";
+
+* {
+    font-family: "proxima-nova", sans-serif;
+    box-sizing: border-box;
+    scrollbar-color: rgba(2, 2, 2, 0.5) #f6f4f3;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.App {
+    background-color: var(--bkg_neutral_secondary);
+}
+
+h2.form-title {
+    text-align: left;
+    border-bottom: 1px solid var(--border_neutral_default);
+    padding: 0 0 16px;
+    margin: 0 0 20px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    color: var(--text_neutral_secondary);
+}
+
+.form-container {
+    padding: 20px 20px 0;
+    text-align: left;
+    background-color: var(--bkg_neutral_default);
+   max-width: 1050px;
+
+    @media (max-width:767px) {
+        padding-bottom: 75px;
+    }
+}
+
+.dashboard-section{
+    display: flex;
+    flex-direction: row;
+    gap:32px;
+    margin-top: 32px;
+
+    @media (max-width:767px) {
+        padding-bottom: 0px;
+        flex-direction: column;
+    }
+}
+.box-editor{
+    //border: 1px solid var(--border_neutral_strong);
+    width: 100%;
+    max-width: 1050px;
+
+    @media (max-width:767px) {
+        width: 100%;
+    }
+}
+.box-title {
+    margin-bottom: 0px;
+    padding: 8px 10px 2px 10px;
+    border-bottom: 1px solid var(--border_neutral_strong);
+    background-color: var(--bkg_neutral_tiertiary);
+    color: var(--text_neutral_default);
+    border-bottom-color: var(--border_neutral_strong);
+}
+
+.vg-input-label {
+    box-sizing: border-box;
+    color: var(--text_neutral_default);
+    margin-bottom: var(--spacing_4);
+    font-weight: var(--font_weight_medium);
+    font-size: var(--font_size_15);
+    line-height: var(--font_height_20);
+    display:block;
+}
+.vg-input-desc{
+    color: var(--text_neutral_default);
+    margin-bottom: var(--spacing_4);
+}
+.editor-data{
+    margin: 8px auto;
+    max-width: 1100px;
+}
+.box-editor .vg-texteditor-shell{
+    margin-bottom: 16px;
+}

@@ -1,0 +1,115 @@
+.vg-smiley-input-control-group {
+    position: relative;
+}
+
+.vg-smiley-input-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.vg-smiley-input-control,
+.vg-smiley-input-control * {
+    background-color: var(--bkg_neutral_default);
+    box-sizing: border-box;
+    padding: var(--spacing_8) var(--spacing_36) var(--spacing_8) var(--spacing_12);
+    color: var(--text_neutral_default);
+    border-radius: var(--radius_full);
+    border: var(--border_width_default) var(--border_style_solid) var(--border_custom_default);
+    font-size: var(--font_size_15);
+    line-height: var(--font_height_20);
+    min-height: var(--sizing_40);
+    box-shadow: var(--shadow_none);
+    width: var(--sizing-full);
+    display: flex;
+    outline: var(--border-width-none);
+    -webkit-appearance: none;
+
+    &::placeholder {
+        color: var(--text_neutral_weak);
+        opacity: 1;
+    }
+
+    &::-webkit-input-placeholder {
+        color: var(--text_neutral_weak);
+        opacity: 1;
+    }
+
+    &:-moz-placeholder {
+        color: var(--text_neutral_weak);
+        opacity: 1;
+    }
+
+    &::-moz-placeholder {
+        color: var(--text_neutral_weak);
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        color: var(--text_neutral_weak);
+        opacity: 1;
+    }
+}
+
+.vg-smiley-input-control:focus,
+input.vg-smiley-input-control-focus{
+    border: var(--border_width_default) var(--border_style_solid) var(--border_blue_default);
+    box-shadow: none !important;
+    outline:0;
+}
+
+.vg-smiley-input-send-btn{
+    cursor: pointer;
+    margin-left: var(--spacing_8);
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    width: 30px;
+    height: 28px;
+    border-radius: 50%;
+    
+    svg{
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.vg-smiley-input-emoji-picker-popup {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: var(--spacing_8);
+    z-index: 9999;
+}
+
+.vg-smiley-input-action-btn {
+    background: none;
+    border: none;
+    padding: var(--spacing_2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text_neutral_default);
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    svg {
+      width: 18px;
+      height:18px;
+    }
+  }
+
+  .vg-smiley-input{
+    position: relative;
+    width: 100%;
+  }
+
+  .vg-smiley-input-emoji-picker-container{
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }

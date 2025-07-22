@@ -1,0 +1,275 @@
+.vg-checkbox-group {
+    position: relative;
+}
+.vg-checkbox{
+    min-height: 20px;
+}
+.vg-form-check {
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: var(--spacing_20);
+    -webkit-tap-highlight-color: transparent;
+    
+    &.disabled-option{
+       .vg-form-check-input{
+        &:disabled {
+            & ~ .vg-check-label::before {
+                // background-color:var(--bkg_components_button_neutral_default);
+                cursor: default;
+            }
+        }
+        .disabled-label{
+            color: #b3b3b3;
+        }
+       } 
+    }
+
+    .vg-form-check-input {
+        left: var(--spacing_0);
+        top: var(--spacing_0);
+        bottom: var(--spacing_0);
+        opacity: var(--spacing_0);
+        margin-right: var(--spacing_0);
+        margin-left: var(--spacing_0);
+        position: absolute;
+        margin-top: var(--spacing_0);
+        cursor: pointer;
+        display: none;
+
+        &.false {
+            & ~ .vg-check-label {
+                &::before {
+                    background-color: var(--bkg_components_selector_default);
+                }
+            }
+        }
+
+        &:checked {
+            & ~ .vg-check-label {
+                &::before {
+                    background-color:var(--bkg_theme_midnight_default);
+                    border-color: var(--border_neutral_strong);
+                    box-sizing: border-box;
+                }
+
+                &::after {
+                    content: '\f00c';
+                    font-family: "Font Awesome 6 Pro";
+                    font-weight: var(--font_weight_bold);
+                    color: var(--text_neutral_ondark);
+                    box-sizing: border-box;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        &:indeterminate {
+            & ~ .vg-check-label {
+                &::before {
+                    background-color:var(--bkg_theme_midnight_default);  /* Example partial checked background color */
+                    border-color: var(--border_neutral_strong);
+                    box-sizing: border-box;
+                }
+        
+                &::after {
+                    content: '\f068';  /* Font Awesome partial check (or another icon) */
+                    font-family: "Font Awesome 6 Pro";
+                    font-weight: var(--font_weight_bold);
+                    color: var(--text_neutral_ondark);
+                    box-sizing: border-box;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        &:hover {
+            & ~ .vg-check-label {
+                &::before {
+                    border: var(--border_width_strong) var(--border_style_solid) var(--border_neutral_strong);
+                }
+            }
+        }
+
+        &:disabled {
+            & ~ .vg-check-label::before {
+                background-color:var(--bkg_components_selector_disabled);
+                cursor: default;
+            }
+        }
+
+        &.partial {
+            & ~ .vg-check-label {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    box-sizing: border-box;
+                    background-color: var(--bkg_components_selector_default);
+                    border: var(--border_width_default) var(--border_style_solid) var(--border_neutral_strong);
+                    width: var(--sizing_20);
+                    height: var(--sizing_20);
+                    border-radius: var(--radius_medium);
+                    left: var(--spacing_0);
+                    top: var(--spacing_0);
+                }
+
+                &::after {
+                    content: '\f068';
+                    font-family: "Font Awesome 6 Pro";
+                    font-weight: var(--font_weight_bold);
+                    color: var(--text_neutral_ondark);
+                    box-sizing: border-box;
+                    font-size: 14px;
+                    top: var(--spacing_0);
+                    left: var(--spacing_4);
+                }
+
+                &:hover {
+                    &::before {
+                        border: var(--border_width_strong) var(--border_style_solid) var(--border_neutral_strong);
+                        box-sizing: border-box;
+                    }
+                }
+            }
+
+            &:checked {
+                & ~ .vg-check-label {
+                    &::before {
+                        background-color: var(--bkg_theme_midnight_default);
+                        border-color: var(--border_neutral_strong);
+                        box-sizing: border-box;
+                    }
+                }
+            }
+        }
+    }
+
+    .vg-check-label {
+        margin-left: var(--spacing_8);
+        margin-bottom: var(--spacing_0);
+        cursor: pointer;
+        font-size: var(--font_size_15);
+        line-height: var(--font_height_20);
+        color: var(--text_neutral_default);
+        font-weight: var(--font_weight_medium);
+        font-family: var(--font_family_proximanova);
+        user-select: none;
+        display: block;
+
+        &::before {
+            content: "";
+            position: absolute;
+            box-sizing: border-box;
+            background-color: var(--bkg_components_selector_default);
+            border: var(--border_width_default) var(--border_style_solid) var(--border_neutral_strong);
+            width: var(--sizing_20);
+            height: var(--sizing_20);
+            border-radius: var(--radius_medium);
+            left: var(--spacing_0);
+            top: var(--spacing_0);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            box-sizing: border-box;
+            left: var(--spacing_4);
+            top: var(--spacing_0);
+        }
+
+        &:hover::before {
+            border: var(--border_width_strong) var(--border_style_solid) var(--border_neutral_strong);
+            box-sizing: border-box;
+        }
+    }
+}
+
+.vg-input-control-error-msg {
+    font-weight: var(--font_weight_regular);
+    font-size: var(--font_size_12);
+    line-height: var(--font_height_16);
+    box-sizing: border-box;
+    color: var(--text_alert_default);
+    text-align: var(--font_align_right);
+    display: block;
+    margin-top: var(--spacing_4);
+    box-sizing: border-box;
+}
+
+.vg-check-description {
+    margin-top: var(--spacing_4);
+    color: var(--text_neutral_weak);
+    font-size: var(--font_size_15);
+    font-weight: var(--font_weight_regular);
+    line-height: var(--font_height_20);
+}
+
+.vg-input-checkbox-disabled {
+    background-color:var(--bkg_components_selector_disabled);
+}
+
+.checkbox-with-image{
+     margin-bottom: var(--spacing_8);
+     padding-left: var(--spacing_0); 
+    
+    .check-box-with-img{
+        display: flex;
+        min-height: var(--spacing_72);
+        padding: var(--spacing_16);
+        justify-content: space-between;
+        align-items: center;
+        border-radius: var(--radius_medium);
+        border: var(--border_width_default) var(--border_style_solid) var(--border_neutral_strong);
+        background:  var(--bkg_neutral_default);
+        overflow: hidden;    
+        width: var(--sizing-full);
+        cursor: pointer;
+        user-select: none;
+        
+        img{
+            max-height: var(--sizing_40);
+            display: block;
+            object-fit: cover;
+        }
+    }
+    &:hover,
+    &:focus,
+    &.selected{
+        .check-box-with-img{
+            border: var(--border_width_default) var(--border_style_solid) var(--border_blue_default);
+            background: var(--bkg_blue_weak);  
+        }
+    }
+    
+    .vg-form-check-input {
+        display: none;
+
+        &:checked + .check-box-with-img .vg-check-label::before {
+            background-color: var(--bkg_theme_midnight_default);
+            border-color:var(--border_neutral_strong);
+        }
+
+        &:checked + .check-box-with-img .vg-check-label::after {
+            content: '\f00c';
+            font-family: "Font Awesome 6 Pro";
+            font-weight: var(--font_weight_bold);
+            color: var(--text_neutral_ondark);
+            font-size: var(--font_size_14);
+        
+        }
+
+        &:disabled + .check-box-with-img .vg-check-label::before {
+            background-color: #eee;
+            cursor: not-allowed;
+        }
+    }
+
+    .vg-check-label {
+        margin-left: var(--spacing_0);
+        margin-bottom: var(--spacing_0);
+        padding-left: var(--spacing_28);
+        cursor: pointer;
+        position: relative;
+    }
+}

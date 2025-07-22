@@ -1,0 +1,160 @@
+.svg-wrapper {
+    padding: 20px;
+
+    @media screen and (max-width: 767px) {
+        padding: 10px;
+    }
+
+    h2 {
+        margin: 0 0 20px;
+        padding: 0 0 5px;
+        font-size: 20px;
+        font-weight: 500;
+        border-bottom: 1px solid var(--border_custom_default);
+        color: var(--text_neutral_default);
+    }
+}
+
+.search-icon {
+    margin: 0 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+        max-width: 500px;
+    }
+}
+
+.svg-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+
+    @media screen and (max-width: 767px) {
+        margin: 0 -10px;
+    }
+
+    .svg-item {
+        width: 150px;
+        padding: 0 16px;
+        margin: 0 0 30px;
+        cursor: pointer;
+
+        @media screen and (max-width: 767px) {
+            width: 146px;
+            padding: 0 10px;
+        }
+
+        .svg-block {
+            position: relative;
+
+            .svg-code {
+                background-color: var(--bkg_neutral_tiertiary);
+                border: 1px solid var(--bkg_neutral_tiertiary);
+                color: var(--text_neutral_default);
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 80px;
+                margin-bottom: 10px;
+                position: relative;
+                -webkit-transition: all .3s ease-out;
+                transition: all .3s ease-out;
+
+                svg {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                .copytoken {
+                    position: absolute;
+                    right: 5px;
+                    top: 5px;
+                    opacity: 0;
+                    visibility: hidden;
+                    -webkit-transition: opacity .3s ease-out;
+                    transition: opacity .3s ease-out;
+                    line-height: 0;
+
+                    svg {
+                        width: 12px;
+                        height: 12px;
+                    }
+                }
+            }
+
+            .svg-name {
+                text-align: center;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+                color: var(--text_neutral_default);
+            }
+
+            .copySvgcode {
+                position: absolute;
+                background-color: var(--bkg_components_status_strong);
+                color: var(--text_neutral_inverse);
+                border-radius: var(--radius_small);
+                padding: 3px 6px;
+                font-size: 12px;
+                position: absolute;
+                top: 51px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &:hover {
+            .svg-block {
+                .svg-code {
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                    border-color: var(--border_neutral_strong);
+
+                    .copytoken {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+
+    .no-results {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 500;
+        width: 100%;
+        color:var(--text_neutral_default);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

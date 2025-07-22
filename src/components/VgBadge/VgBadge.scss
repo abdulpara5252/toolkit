@@ -1,0 +1,246 @@
+.vg-group {
+    position: relative;
+}
+
+.vg-badge {
+    padding: var(--spacing_2) var(--spacing_8);
+    font-family:var(--font_family_proximanova);
+    font-weight: var(--font_weight_medium);
+    font-size: var(--font_size_12);
+    line-height:var(--font_height_16);
+    border-radius:var(--radius_small);
+    display: inline-block;
+    margin-right: var(--spacing_0);
+    box-sizing: border-box;
+    cursor: default;
+}
+
+/*Different Type of Badges*/
+.vg-badge-default {
+    background: var(--bkg_neutral_tiertiary);
+    color: var(--text_neutral_default);
+}
+.vg-badge-positive {
+    background: var(--bkg_green_default);
+    color: var(--text_neutral_ondark);
+}
+
+.vg-badge-defaults {
+    background:var(--bkg_neutral_tiertiary);
+    color: var(--text_neutral_default);
+}
+
+.vg-badge-informational {
+    background: var(--bkg_components_status_strong);
+    color: var(--text_neutral_inverse);
+}
+
+.vg-badge-secondary-white {
+    background: var(--bkg_neutral_default);
+    color: var(--text_neutral_default);
+    border: 1px solid var(--border_neutral_strong);
+}
+
+.vg-badge--overlay {
+    background:var(--bkg_alert_default);
+    color: var(--text_neutral_ondark);
+    border-radius: var(--radius_full);
+    text-align: var(--font_align_center);
+    padding: var(--spacing_2) var(--spacing_6);
+    min-width: var(--spacing_20);
+    height: var(--spacing_20);
+    margin-right: var(--spacing_0);
+
+    &.vg-badge-color-black {
+        background: var(--icon_neutral_default);
+        color: var(--bkg_neutral_default)
+    }
+
+    &.vg-badge-color-leave {
+        background:var(--bkg_alert_default);
+    }
+}
+
+.vg-badge-new{
+    background: var(--bkg_blue_default);
+    color:var(--text_neutral_ondark);
+}
+.vg-badge-warning {
+    background:var(--bkg_warning_default);
+    color: var(--text_neutral_ondark);
+}
+.vg-badge-alert {
+    background: var(--bkg_alert_default);
+    color: var(--text_neutral_ondark);
+}
+
+.vg-badge-icon {
+    margin-right: var(--spacing_4);
+    margin-left: var(--spacing_4);
+    width: var(--sizing_auto);
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+.icon-badge-group,
+.discount-badge-group,
+.ad-badge-group,
+.covid-badge-group,
+.time-badge-group,
+.cc-visa-badge-group {
+    margin-top: var(--spacing_4);
+}
+
+.vg-badge-discount,
+.vg-badge-discount-lg {
+    display: inline-block;
+    padding: var(--spacing_4) var(--spacing_8);
+    border-top-left-radius: var(--radius_medium);
+    background-color:var(--bkg_theme_midnight_default);
+    border-color:var(--text_neutral_ondark);
+    color: var(--text_neutral_inverse);
+    font-size: var(--font_size_12);
+    line-height: var(--font_height_20);
+    font-weight: var(--font_weight_regular);
+    margin-right: var(--spacing_4);
+}
+
+.vg-strikethrough {
+    opacity: 50%;
+    font-size: var(--font_size_12);
+    line-height:var(--font_height_16);
+    font-weight: var(--font_weight_regular);
+    -webkit-text-decoration: var(--font_strikethrough);
+    text-decoration: var(--font_strikethrough);
+}
+
+.vg-badge-ad {
+    color: var(--text_blue_default);
+    padding: var(--spacing_0) var(--spacing_4);
+    text-align: var(--font_align_cente);
+    border-width: var(--border_width_default);
+    border-color:var(--border_blue_default);
+    border-style: var(--border_style_solid);
+    border-radius: var(--radius_small);
+    font-size: var(--font_size_12);
+    line-height: var(--font_height_16);
+    background: var(--bkg_components_button_neutral_default);
+}
+
+.vg-rounded-bedge {
+      border-radius: var(--radius_full);
+}
+
+.vg-badge-blue {
+    background-color:var(--bkg_blue_default);
+    color: var(--text_neutral_default);
+    border-color: var(--border_blue_default);
+}
+
+.vg-covid-symbol {
+    background-image: url('https://1a96a36bae7c8550901a-274b8a70320bb26e7a1e0ea7836ee429.ssl.cf2.rackcdn.com/Images/covid-symbol.svg');
+    background-repeat: no-repeat;
+    background-size: 16px;
+    margin-right: var(--spacing_4);
+    width: var(--sizing_16);
+    height: var(--sizing_16);
+    float: left;
+}
+
+.vg-badge-time {
+    background-color: var(--bkg_neutral_tiertiary);
+    padding: var(--spacing_4) var(--spacing_8);
+    border-radius:var(--radius_full);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    max-height: var(--sizing_20);
+    color:var(--text_neutral_default);
+    font-size: var(--font_size_12);
+    line-height: var(--font_height_16);
+    font-weight: var(--font_weight_semibold);
+}
+
+.vg-badge-visa {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vg-cc-visa-icon::before{
+    color:var(--text_blue_default);
+    font-size: var(--font_height_24);
+    content: "\f1f0";
+    font-family: "Font Awesome 6 Brands";
+    font-weight: var(--font_weight_semibold);
+}
+
+
+.vg-badge {
+    /* Shape variations */
+    &.vg-badge--rectangular {
+        border-radius: var(--radius_small);
+    }
+
+    &.vg-badge--chip {
+      border-radius: var(--radius_large);
+    }
+
+    &.vg-badge--square {
+        border-radius: 0;
+    }
+
+    &.vg-badge--circle {
+        border-radius: var(--radius_full);
+        padding: var(--spacing_6) var(--spacing_12);
+    }
+
+    /* Size variations */
+    &.vg-badge--inline {
+        font-size: var(--font_size_12);
+        line-height: var(--font_height_16);
+        padding: var(--spacing_2) var(--spacing_8);
+    }
+
+    &.vg-badge--medium {
+        font-size: var(--font_size_15);
+        line-height: var(--font_height_20);
+        padding: var(--spacing_4) var(--spacing_8);
+    }
+
+    &.vg-badge--large {
+        font-size: var(--font_size_15);
+        line-height: var(--font_height_20);
+        padding: var(--spacing_8);
+        font-weight: var(--font_weight_regular);
+    }
+}
+
+/* Disabled state */
+.vg-badge--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.vg-badge-icon-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vg-plus-icon::before{
+    content: "\f067";
+    font-family: "Font Awesome 6 Pro";
+    font-weight: var(--font_weight_bold);
+}
+
+.vg-camera-icon::before{
+    content: "\f03d";
+    font-family: "Font Awesome 6 Pro";
+    font-weight: var(--font_weight_bold);
+}
+.vg-pencil-icon::before{
+    content: "\f303";
+    font-family: "Font Awesome 6 Pro";
+    font-weight: var(--font_weight_bold);
+}

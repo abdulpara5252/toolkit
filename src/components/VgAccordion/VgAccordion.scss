@@ -1,0 +1,55 @@
+.vg-accordion-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid var(--border_neutral_default);
+    .vg-accordion-header{
+        .vg-accordion-title{
+            font-size: 15px;
+            line-height: 20px;
+            font-weight: 500;
+            color: var(--text_neutral_default);
+            padding: 16px 8px;            
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            box-shadow: none;
+            outline: none;
+            .vg-accordion-icon {
+                display: flex;
+                align-items: center;
+                transition: transform 0.35s ease;
+                color: var(--text_neutral_default);
+            }
+        }
+        &.active{
+            .vg-accordion-title{
+                .vg-accordion-icon {
+                    color: var(--text_neutral_secondary)
+                }
+            }
+        }
+    }
+    .vg-accordion-body{
+        height: 100%;
+    }
+    .vg-accordion-show{
+        -webkit-transition: height 0.35s ease;
+        -moz-transition: height 0.35s ease;
+        -ms-transition: height 0.35s ease;
+        transition: height 0.35s ease;
+        overflow: hidden
+    }
+    .vg-accordion-hide{
+        -webkit-transition: height 0.35s ease;
+        -moz-transition: height 0.35s ease;
+        -ms-transition: height 0.35s ease;
+        transition: height 0.35s ease;
+        overflow: hidden;
+        transition: height 0.5s ease;
+    }
+}
+
+    
