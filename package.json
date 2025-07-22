@@ -1,6 +1,6 @@
 {
-  "name": "@vagaro/vagaro-react-toolkit",
-  "version": "1.0.2",
+  "name": "@abdulpara5252/vagaro-react-toolkit",
+  "version": "1.0.3",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "proxy": "https://dev14.bookitall.com",
@@ -13,12 +13,12 @@
   ],
   "license": "MIT",
   "author": "Vagaro",
-  "repository": {
+ "repository": {
     "type": "git",
-    "url": "https://Vagaro@dev.azure.com/Vagaro/TeamDevelopment/_git/Vagaro.React.Toolkit"
+    "url": "https://github.com/abdulpara5252/artifacts-package.git"
   },
   "publishConfig": {
-    "registry": "https://pkgs.dev.azure.com/Vagaro/_packaging/ReactToolkit/npm/registry/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "peerDependencies": {
     "axios": "^1.6.7",
